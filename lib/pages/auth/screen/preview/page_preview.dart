@@ -35,8 +35,7 @@ class _APagePreviewState extends State<APagePreview> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = AHelperFunctions.isDarkMode(context);
-    final cLogo = isDark ? AAssets.lightAppLogo : AAssets.darkAppLogo;
+    final cLogo = AHelperFunctions.getLogoUrl(context);
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Stack(

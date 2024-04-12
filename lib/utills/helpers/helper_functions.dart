@@ -1,3 +1,4 @@
+import 'package:enfluwence/utills/consts/asset_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -82,6 +83,12 @@ class AHelperFunctions {
     return Theme.of(context).brightness == Brightness.dark;
   }
 
+  static String getLogoUrl(BuildContext context) {
+    return AHelperFunctions.isDarkMode(context)
+        ? AAssets.lightAppLogo
+        : AAssets.darkAppLogo;
+  }
+
   static Size screenSize() {
     return MediaQuery.of(Get.context!).size;
   }
@@ -94,7 +101,8 @@ class AHelperFunctions {
     return MediaQuery.of(Get.context!).size.width;
   }
 
-  static String getFormattedDate(DateTime date, {String format = 'dd MMM yyyy'}) {
+  static String getFormattedDate(DateTime date,
+      {String format = 'dd MMM yyyy'}) {
     return DateFormat(format).format(date);
   }
 
@@ -105,7 +113,8 @@ class AHelperFunctions {
   static List<Widget> wrapWidgets(List<Widget> widgets, int rowSize) {
     final wrappedList = <Widget>[];
     for (var i = 0; i < widgets.length; i += rowSize) {
-      final rowChildren = widgets.sublist(i, i + rowSize > widgets.length ? widgets.length : i + rowSize);
+      final rowChildren = widgets.sublist(
+          i, i + rowSize > widgets.length ? widgets.length : i + rowSize);
       wrappedList.add(Row(children: rowChildren));
     }
     return wrappedList;
