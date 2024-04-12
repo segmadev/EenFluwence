@@ -1,4 +1,5 @@
 import 'package:enfluwence/utills/theme/theme.dart';
+import 'package:enfluwence/pages/auth/preview/page_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,18 +8,14 @@ void main() {
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // themeMode: ThemeMode.system,
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
       theme: AAppTheme.lightTheme,
       darkTheme: AAppTheme.darkTheme,
-      home: const Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: const Scaffold(body: APagePreview()),
     );
   }
 }

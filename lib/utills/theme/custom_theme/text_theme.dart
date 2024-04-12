@@ -69,11 +69,11 @@ class ATextTheme {
 
     // body style
     bodyLarge: const TextStyle().copyWith(
-        fontSize: ASizes.fontSizeSm,
+        fontSize: ASizes.fontSizeLg,
         fontWeight: FontWeight.w400,
         color: AColor.white),
     bodyMedium: const TextStyle().copyWith(
-        fontSize: ASizes.fontSizeSm,
+        fontSize: ASizes.fontSizeMd,
         fontWeight: FontWeight.w400,
         color: AColor.white),
     bodySmall: const TextStyle().copyWith(color: AColor.white),

@@ -7,7 +7,7 @@ class AColor {
 // lbackground
   static const lbackground = Color(0xffF0F0F0);
 // dprimary
-  static const dprimary = Color(0xff4318FF);
+  static const dprimary = Color(0xffF0F0F0);
 // lprimary
   static const lprimary = Color(0xff161B25);
 // success
@@ -19,7 +19,7 @@ class AColor {
 // white
   static const white = Color(0xffffffff);
 // black
-  static const black = Color(0xff000000);
+  static const black = Color(0xff161B25);
 // transparent
   static const transparent = Color(0x00000000);
 // gradientColor

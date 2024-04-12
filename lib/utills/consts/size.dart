@@ -1,4 +1,3 @@
-
 class ASizes {
   // Padding and margin sizes
   static const double xs = 4.0;
@@ -16,7 +15,7 @@ class ASizes {
   // Font sizes
   static const double fontSizeSm = 14.0;
   static const double fontSizeMd = 16.0;
-  static const double fontSizeLg = 18.0;
+  static const double fontSizeLg = 30.0;
 
   // Button sizes
   static const double buttonHeight = 18.0;
@@ -68,6 +67,3 @@ class ASizes {
   // Grid view spacing
   static const double gridViewSpacing = 16.0;
 }
-
-
-

@@ -10,10 +10,21 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_native_splash: ^2.3.7
+  get: ^4.6.6
+  intl: ^0.19.0
+  smooth_page_indicator: ^1.1.0
+  url_launcher: ^6.2.4
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
 
 flutter:
+  assets:
+    - assets/images/logos/
+    - assets/images/
+    - assets/data/
+    
   uses-material-design: true
