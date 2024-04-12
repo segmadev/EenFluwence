@@ -1,5 +1,5 @@
 import 'package:enfluwence/utills/theme/theme.dart';
-import 'package:enfluwence/pages/auth/preview/page_preview.dart';
+import 'package:enfluwence/pages/auth/screen/preview/page_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {

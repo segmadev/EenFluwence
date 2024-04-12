@@ -3,8 +3,8 @@ import 'package:enfluwence/pages/auth/controllers/preview/preview_controller.dar
 import 'package:enfluwence/utills/consts/asset_paths.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/helpers/helper_functions.dart';
-import 'package:enfluwence/pages/auth/preview/single_page.dart';
-import 'package:enfluwence/pages/auth/preview/soomth_indicator.dart';
+import 'package:enfluwence/pages/auth/screen/preview/single_page.dart';
+import 'package:enfluwence/pages/auth/screen/preview/soomth_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
