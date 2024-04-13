@@ -25,4 +25,6 @@ class AColor {
 // gradientColor
 // blue
   static const blue = Color(0xff4318FF);
+// gray
+  static const gray = Color(0xFF4F4F4F);
 }

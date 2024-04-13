@@ -1,5 +1,6 @@
+import 'package:enfluwence/pages/auth/screen/auth.dart';
+import 'package:enfluwence/pages/auth/screen/signIn/signin.dart';
 import 'package:enfluwence/utills/theme/theme.dart';
-import 'package:enfluwence/pages/auth/screen/preview/page_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,10 +13,12 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
+      // themeMode: ThemeMode.system,
       theme: AAppTheme.lightTheme,
       darkTheme: AAppTheme.darkTheme,
-      home: const Scaffold(body: APagePreview()),
+      home: const Scaffold(body: AuthScreen()
+          // APagePreview()
+          ),
     );
   }
 }

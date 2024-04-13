@@ -10,7 +10,7 @@ class AuthHeader extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(
-          height: ASizes.imageCarouselHeight,
+          height: ASizes.AuthLogoHeight,
         ),
         Image.asset(AHelperFunctions.getLogoUrl(context)),
       ],

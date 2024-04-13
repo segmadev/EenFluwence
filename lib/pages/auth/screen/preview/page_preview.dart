@@ -37,7 +37,7 @@ class _APagePreviewState extends State<APagePreview> {
   Widget build(BuildContext context) {
     final cLogo = AHelperFunctions.getLogoUrl(context);
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(10.0),
       child: Stack(
         children: <Widget>[
           PageView(
