@@ -1,4 +1,3 @@
-import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/widgets/navigation/navigation_controller.dart';
 import 'package:enfluwence/widgets/navigation/navigation_list.dart';

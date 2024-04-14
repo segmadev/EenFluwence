@@ -1,12 +1,11 @@
-import 'dart:convert';
 import 'package:enfluwence/pages/auth/controllers/preview/preview_controller.dart';
-import 'package:enfluwence/utills/consts/asset_paths.dart';
+import 'package:enfluwence/pages/auth/screen/preview/preview_list.dart';
 import 'package:enfluwence/utills/consts/size.dart';
+import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/utills/helpers/helper_functions.dart';
 import 'package:enfluwence/pages/auth/screen/preview/single_page.dart';
 import 'package:enfluwence/pages/auth/screen/preview/soomth_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class APagePreview extends StatefulWidget {
@@ -17,21 +16,8 @@ class APagePreview extends StatefulWidget {
 }
 
 class _APagePreviewState extends State<APagePreview> {
+  List<dynamic> splashList = Get.put(APreviewList.previewList);
   final _controller = Get.put(PreviewController());
-  List<dynamic> splashList = [];
-
-  Future<void> _getSplashList() async {
-    String data = await rootBundle.loadString(AAssets.splashUrl);
-    setState(() async {
-      splashList = json.decode(data);
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _getSplashList();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +46,7 @@ class _APagePreviewState extends State<APagePreview> {
                   _controller.skipToLastPage();
                 },
                 child: Text(
-                  'Skip',
+                  AText.skip,
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
               )),

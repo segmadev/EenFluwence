@@ -21,7 +21,6 @@ class SinglePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       color: Colors.transparent,
       child: Column(
@@ -33,13 +32,16 @@ class SinglePage extends StatelessWidget {
           const SizedBox(
             height: 60,
           ),
-          Text(
-            title ?? "",
-            style: Theme.of(context).textTheme.headlineLarge,
+          Center(
+            child: Text(
+              title ?? "",
+              style: Theme.of(context).textTheme.headlineLarge,
+              textAlign: TextAlign.center,
+            ),
           ),
           SizedBox(
             width: 300,
-            height: (screenHeight / 2) - 50,
+            height: ASizes.imageCarouselHeight,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

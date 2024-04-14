@@ -5,6 +5,8 @@ class AText {
   static const String wallet = "Wallet";
   static const String more = "More";
 
+  static const String skip = "Skip";
+
   static const String signup = "Sign Up";
   static const String signin = "Sign In";
   static const String signout = "Sign Out";
