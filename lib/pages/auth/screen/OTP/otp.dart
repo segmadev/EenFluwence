@@ -1,6 +1,7 @@
 import 'package:enfluwence/pages/auth/screen/OTP/otp_Input.dart';
 import 'package:enfluwence/pages/auth/screen/success/success.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
+import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/widgets/buttons/primary_button.dart';
@@ -62,7 +63,7 @@ class OTPScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Icon(
-                            Icons.refresh,
+                            AIcons.reload,
                             color: Theme.of(context).primaryColor,
                             size: ASizes.fontSizeSm,
                           ),

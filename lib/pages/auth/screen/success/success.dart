@@ -2,7 +2,9 @@ import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/widgets/buttons/primary_button.dart';
 import 'package:enfluwence/widgets/header/auth_header.dart';
+import 'package:enfluwence/widgets/navigation/navigation_menu.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({super.key});
@@ -23,8 +25,11 @@ class SuccessScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const PrimaryButton(
+              PrimaryButton(
                 name: AText.done,
+                onPressed: () {
+                  Get.to(const NavigationMenu());
+                },
               ),
             ],
           ),

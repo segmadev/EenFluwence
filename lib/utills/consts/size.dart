@@ -71,4 +71,8 @@ class ASizes {
 
   // Grid view spacing
   static const double gridViewSpacing = 16.0;
+
+  // navbar height
+  static const double navBarHeight = 75.0;
+  static const double navBarElevation = 1;
 }

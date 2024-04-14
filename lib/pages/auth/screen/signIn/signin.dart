@@ -1,7 +1,9 @@
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/widgets/buttons/primary_button.dart';
+import 'package:enfluwence/widgets/navigation/navigation_menu.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -49,7 +51,9 @@ class SignInScreen extends StatelessWidget {
           // Sign In Button
           PrimaryButton(
             name: AText.signin,
-            onPressed: () {},
+            onPressed: () {
+              Get.to(const NavigationMenu());
+            },
           ),
         ],
       ),

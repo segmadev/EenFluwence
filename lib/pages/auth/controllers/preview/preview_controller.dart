@@ -35,7 +35,6 @@ class PreviewController extends GetxController {
 
   /// Update current index and jump to last page
   void skipToLastPage() {
-    currentPageIndex.value = pageCount;
-    pageController.jumpToPage(pageCount);
+    Get.to(const AuthScreen());
   }
 }
