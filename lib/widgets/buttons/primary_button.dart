@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class PrimayButton extends StatelessWidget {
-  const PrimayButton({
+class PrimaryButton extends StatelessWidget {
+  const PrimaryButton({
     super.key,
     required this.name,
-    this.onclick,
+    this.onPressed,
   });
   final String name;
-  final void Function()? onclick;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: onclick ?? () {},
+      onPressed: onPressed ?? () {},
         child: Text(name),
       ),
     );

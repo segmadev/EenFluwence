@@ -18,9 +18,7 @@ class MainApp extends StatelessWidget {
       // themeMode: ThemeMode.system,
       theme: AAppTheme.lightTheme,
       darkTheme: AAppTheme.darkTheme,
-      home: const Scaffold(body: APagePreview()
-          // APagePreview()
-          ),
+      home: const Scaffold(body: APagePreview()),
     );
   }
 }

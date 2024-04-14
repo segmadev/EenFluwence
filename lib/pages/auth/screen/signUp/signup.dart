@@ -1,6 +1,7 @@
 import 'package:enfluwence/pages/auth/screen/OTP/otp.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/consts/text.dart';
+import 'package:enfluwence/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -39,15 +40,11 @@ class SignUpScreen extends StatelessWidget {
           const SizedBox(height: ASizes.spaceBtwInputFields),
 
           // Sign In Button
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
+          PrimaryButton(
+              name: AText.signup,
               onPressed: () {
                 Get.to(const OTPScreen());
-              },
-              child: const Text(AText.signup),
-            ),
-          ),
+              }),
         ],
       ),
     );

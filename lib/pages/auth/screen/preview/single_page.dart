@@ -1,6 +1,8 @@
 import 'package:enfluwence/pages/auth/controllers/preview/preview_controller.dart';
 import 'package:enfluwence/pages/auth/screen/auth.dart';
 import 'package:enfluwence/utills/consts/size.dart';
+import 'package:enfluwence/utills/consts/text.dart';
+import 'package:enfluwence/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -49,15 +51,12 @@ class SinglePage extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      // Get.to(const AuthScreen());
-                      _controller.nextPage(context);
-                    },
-                    child: const Text("Next"),
-                  ),
+                PrimaryButton(
+                  name: AText.next,
+                  onPressed: () {
+                    // Get.to(const AuthScreen());
+                    _controller.nextPage(context);
+                  },
                 ),
               ],
             ),

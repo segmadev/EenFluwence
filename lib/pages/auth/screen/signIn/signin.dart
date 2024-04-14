@@ -1,5 +1,6 @@
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/consts/text.dart';
+import 'package:enfluwence/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -17,12 +18,12 @@ class SignInScreen extends StatelessWidget {
               labelText: AText.email,
             ),
           ),
-          SizedBox(height: ASizes.spaceBtwInputFields),
+          const SizedBox(height: ASizes.spaceBtwInputFields),
           TextFormField(
             decoration: const InputDecoration(
                 labelText: AText.password, suffixIcon: Icon(Iconsax.eye_slash)),
           ),
-          SizedBox(height: ASizes.spaceBtwInputFields),
+          const SizedBox(height: ASizes.spaceBtwInputFields),
           Row(
             children: [
               Row(
@@ -46,12 +47,9 @@ class SignInScreen extends StatelessWidget {
           const SizedBox(height: ASizes.spaceBtwInputFields),
 
           // Sign In Button
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: const Text(AText.signin),
-            ),
+          PrimaryButton(
+            name: AText.signin,
+            onPressed: () {},
           ),
         ],
       ),

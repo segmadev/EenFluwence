@@ -1,4 +1,5 @@
 import 'package:enfluwence/pages/auth/screen/OTP/otp_Input.dart';
+import 'package:enfluwence/pages/auth/screen/success/success.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/consts/text.dart';
@@ -6,6 +7,7 @@ import 'package:enfluwence/widgets/buttons/primary_button.dart';
 import 'package:enfluwence/widgets/countdown/countdown.dart';
 import 'package:enfluwence/widgets/header/auth_header.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OTPScreen extends StatelessWidget {
   const OTPScreen({super.key});
@@ -77,8 +79,12 @@ class OTPScreen extends StatelessWidget {
                 const SizedBox(
                   height: ASizes.spaceBtwSections,
                 ),
-                ACountDown(seconds: 20),
-                const PrimayButton(name: AText.tContinue),
+                const ACountDown(seconds: 20),
+                PrimaryButton(
+                    name: AText.tContinue,
+                    onPressed: () {
+                      Get.to(const SuccessScreen());
+                    }),
               ]),
             )
           ],
