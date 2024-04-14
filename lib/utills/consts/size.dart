@@ -51,6 +51,11 @@ class ASizes {
   static const double inputFieldRadius = 12.0;
   static const double spaceBtwInputFields = 16.0;
 
+  // otp input field
+  static const int noOfOTP = 6;
+  static const double otpInputFieldHeight = 50.0;
+  static const double otpInputFieldWidth = 45.0;
+
   // Card sizes
   static const double cardRadiusLg = 16.0;
   static const double cardRadiusMd = 12.0;

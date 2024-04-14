@@ -6,6 +6,7 @@ class AText {
   static const String password = "Password";
   static const String forgetpassword = "Forget Password";
   static const String confirmPassword = "Confirm Password";
+  static const String tContinue = "Continue";
 
   static const String firstName = "First Name";
   static const String lastName = "Last Name";
@@ -23,4 +24,11 @@ class AText {
   static const String verificationCode = "verificationCode";
   static const String resendEmail = "Resend Email";
   static const String resendEmailIn = "Resend email in";
+
+  // otp
+  static const String otpTitle = "Got it! please enter OTP";
+  static const String otpDescription =
+      "You will get a confirmation code via email you provide.";
+
+  static const String reSendOTP = "Resend OTP";
 }

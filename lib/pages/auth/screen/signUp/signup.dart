@@ -1,6 +1,8 @@
+import 'package:enfluwence/pages/auth/screen/OTP/otp.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -17,13 +19,13 @@ class SignUpScreen extends StatelessWidget {
               labelText: AText.email,
             ),
           ),
-          SizedBox(height: ASizes.spaceBtwInputFields),
+          const SizedBox(height: ASizes.spaceBtwInputFields),
           TextFormField(
             decoration: const InputDecoration(
               labelText: AText.username,
             ),
           ),
-          SizedBox(height: ASizes.spaceBtwInputFields),
+          const SizedBox(height: ASizes.spaceBtwInputFields),
           TextFormField(
             decoration: const InputDecoration(
                 labelText: AText.password, suffixIcon: Icon(Iconsax.eye_slash)),
@@ -40,7 +42,9 @@ class SignUpScreen extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(const OTPScreen());
+              },
               child: const Text(AText.signup),
             ),
           ),
