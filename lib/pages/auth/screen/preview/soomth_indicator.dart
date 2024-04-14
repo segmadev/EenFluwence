@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ASoomthPageIndicator extends StatelessWidget {
-   ASoomthPageIndicator({
+  ASoomthPageIndicator({
     super.key,
     required this.count,
   });
@@ -13,7 +13,7 @@ class ASoomthPageIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: const Alignment(0, 0.9),
+      alignment: const Alignment(0, 0.7),
       child: SmoothPageIndicator(
         controller: _controller.pageController,
         count: count,

@@ -1,5 +1,8 @@
+import 'package:enfluwence/pages/auth/screen/auth.dart';
+import 'package:enfluwence/routes/route_consts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class PreviewController extends GetxController {
   static PreviewController get instance => Get.find();
@@ -15,7 +18,8 @@ class PreviewController extends GetxController {
   }
 
   // update current index and jump to next page
-  void nextPage() {
+
+  void nextPage(context) {
     // check if not last page before jump
     if (currentPageIndex.value < pageCount) {
       currentPageIndex.value++;
@@ -25,7 +29,7 @@ class PreviewController extends GetxController {
         curve: Curves.easeInOut,
       );
     } else {
-      // Get.to(LoginScreen());
+      Get.to(const AuthScreen());
     }
   }
 

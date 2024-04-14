@@ -1,4 +1,5 @@
 import 'package:enfluwence/pages/auth/screen/signIn/signin.dart';
+import 'package:enfluwence/pages/auth/screen/signUp/signup.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/widgets/controllers/simple_tabs_controller.dart';
 import 'package:enfluwence/widgets/header/auth_header.dart';
@@ -51,7 +52,7 @@ class _AuthScreenState extends State<AuthScreen>
                     child:
                         TabBarView(controller: _tabController, children: const [
                       SignInScreen(),
-                      Text("Sign Up"),
+                      SignUpScreen(),
                     ]),
                   ),
                 ],

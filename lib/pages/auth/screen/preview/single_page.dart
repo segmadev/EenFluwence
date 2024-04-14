@@ -1,9 +1,11 @@
 import 'package:enfluwence/pages/auth/controllers/preview/preview_controller.dart';
+import 'package:enfluwence/pages/auth/screen/auth.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SinglePage extends StatelessWidget {
-   SinglePage({
+  SinglePage({
     super.key,
     required this.imageUrl,
     this.title,
@@ -51,7 +53,8 @@ class SinglePage extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      _controller.nextPage();
+                      // Get.to(const AuthScreen());
+                      _controller.nextPage(context);
                     },
                     child: const Text("Next"),
                   ),
