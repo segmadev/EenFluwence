@@ -10,7 +10,7 @@ class NavigationMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
-    final navigationList = Get.put(ANavigationList.navigationList);
+    final navigationList = ANavigationList.navigationList;
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
@@ -27,7 +27,11 @@ class NavigationMenu extends StatelessWidget {
           }).toList(),
         ),
       ),
-      body: Obx(() => navigationList[controller.selectedIndex.value]['screen']),
+      body: Obx(
+        () => navigationList.isNotEmpty
+            ? navigationList[controller.selectedIndex.value]['screen']
+            : const Center(child: Text("Error Geting Page")),
+      ),
     );
   }
 }
