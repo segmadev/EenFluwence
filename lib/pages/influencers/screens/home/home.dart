@@ -1,7 +1,10 @@
+import 'package:enfluwence/pages/influencers/screens/campaings/task_button.dart';
 import 'package:enfluwence/pages/influencers/screens/wallet/balance.dart';
+import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/helpers/helper_functions.dart';
 import 'package:enfluwence/widgets/appbar/appbar.dart';
+import 'package:enfluwence/widgets/buttons/lg_button.dart';
 import 'package:enfluwence/widgets/containers/card.dart';
 import 'package:flutter/material.dart';
 
@@ -33,8 +36,10 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              ACard(
-                child: Text("Home page"),
+              const ACard(
+                child: Column(children: [
+                  TaskButton(),
+                ]),
               ),
             ],
           ),
