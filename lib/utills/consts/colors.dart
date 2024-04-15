@@ -8,11 +8,12 @@ class AColor {
     begin: Alignment(0.1, 0.1),
     end: Alignment(-1.0, -0.2),
   );
-
+// app bar bg
+  static const appBarBg = Color.fromARGB(255, 10, 10, 15);
 // dbackground
   static const dbackground = Color(0xff1A1A27);
 // lbackground
-  static const lbackground = Color(0xffF0F0F0);
+  static const lbackground = Color.fromARGB(255, 229, 229, 229);
   // scolor
   static const scolor = Color(0xff4318FF);
 // dprimary
@@ -28,7 +29,7 @@ class AColor {
 // white
   static const white = Color(0xffffffff);
 // black
-  static const black = Color(0xff161B25);
+  static const black = Color.fromARGB(255, 10, 10, 10);
 // transparent
   static const transparent = Color(0x00000000);
 // gradientColor
