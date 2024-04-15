@@ -9,7 +9,7 @@ class AAppTheme {
   AAppTheme._();
   // light theme settings
   static ThemeData lightTheme = ThemeData(
-      fontFamily: 'raleway',
+      fontFamily: 'Raleway',
       useMaterial3: true,
       brightness: Brightness.light,
       primaryColor: AColor.lbackground,
