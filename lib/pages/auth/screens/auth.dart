@@ -1,5 +1,5 @@
-import 'package:enfluwence/pages/auth/screen/signIn/signin.dart';
-import 'package:enfluwence/pages/auth/screen/signUp/signup.dart';
+import 'package:enfluwence/pages/auth/screens/signIn/signin.dart';
+import 'package:enfluwence/pages/auth/screens/signUp/signup.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/widgets/controllers/simple_tabs_controller.dart';
 import 'package:enfluwence/widgets/header/auth_header.dart';

@@ -1,4 +1,4 @@
-import 'package:enfluwence/pages/auth/screen/OTP/otp.dart';
+import 'package:enfluwence/pages/auth/screens/OTP/otp.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/widgets/buttons/primary_button.dart';

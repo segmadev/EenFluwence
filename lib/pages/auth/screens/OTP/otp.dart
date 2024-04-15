@@ -1,5 +1,5 @@
-import 'package:enfluwence/pages/auth/screen/OTP/otp_Input.dart';
-import 'package:enfluwence/pages/auth/screen/success/success.dart';
+import 'package:enfluwence/pages/auth/screens/OTP/otp_Input.dart';
+import 'package:enfluwence/pages/auth/screens/success/success.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';

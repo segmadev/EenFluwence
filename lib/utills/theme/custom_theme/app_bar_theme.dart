@@ -21,8 +21,8 @@ class AAppBarTheme {
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: AColor.black, size: ASizes.iconMd),
-    actionsIconTheme: IconThemeData(color: AColor.white, size: ASizes.iconMd),
+    iconTheme: IconThemeData(color: AColor.white, size: ASizes.iconSm),
+    actionsIconTheme: IconThemeData(color: AColor.white, size: ASizes.iconSm),
     titleTextStyle: TextStyle(
         fontSize: 18.0, fontWeight: FontWeight.w600, color: AColor.white),
   );

@@ -6,6 +6,7 @@ class AText {
   static const String more = "More";
 
   static const String skip = "Skip";
+  static const String back = "Back";
 
   static const String signup = "Sign Up";
   static const String signin = "Sign In";

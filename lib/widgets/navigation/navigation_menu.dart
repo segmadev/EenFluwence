@@ -1,6 +1,10 @@
+import 'package:enfluwence/pages/influencers/models/user.dart';
+import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';
+import 'package:enfluwence/widgets/appbar/appbar.dart';
 import 'package:enfluwence/widgets/navigation/navigation_controller.dart';
 import 'package:enfluwence/widgets/navigation/navigation_list.dart';
+import 'package:enfluwence/widgets/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,6 +16,25 @@ class NavigationMenu extends StatelessWidget {
     final controller = Get.put(NavigationController());
     final navigationList = ANavigationList.navigationList;
     return Scaffold(
+      appBar: AAppBar(
+        showBackArrow: false,
+        leadingWidth: 40,
+        leading: AProfile.profileAvatar,
+        title: Text(User.info['name'] ?? "Undfined",
+            style: Theme.of(context).textTheme.titleMedium),
+        actions: [
+          IconButton(
+            iconSize: ASizes.iconMd,
+            icon: Icon(AIcons.notification),
+            onPressed: () {},
+          ),
+          IconButton(
+            iconSize: ASizes.iconMd,
+            icon: Icon(Icons.more_vert),
+            onPressed: () {},
+          ),
+        ],
+      ),
       bottomNavigationBar: Obx(
         () => NavigationBar(
           height: ASizes.navBarHeight,

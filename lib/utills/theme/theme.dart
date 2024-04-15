@@ -14,7 +14,7 @@ class AAppTheme {
       primaryColor: AColor.lbackground,
       scaffoldBackgroundColor: AColor.lbackground,
       textTheme: ATextTheme.lightTextTheme,
-      appBarTheme: AAppBarTheme.darkAppBarTheme,
+      appBarTheme: AAppBarTheme.lightAppBarTheme,
       elevatedButtonTheme: AElevatedButtonTheme.lightElevatedButtonTheme,
       inputDecorationTheme: ATextFormFieldTheme.lightInputDecorationTheme);
   // dark theme settings

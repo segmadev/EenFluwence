@@ -1,4 +1,4 @@
-import 'package:enfluwence/pages/auth/screen/preview/page_preview.dart';
+import 'package:enfluwence/pages/auth/screens/preview/page_preview.dart';
 import 'package:enfluwence/utills/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

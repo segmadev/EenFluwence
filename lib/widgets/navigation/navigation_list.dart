@@ -1,3 +1,4 @@
+import 'package:enfluwence/pages/influencers/screens/home.dart';
 import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,7 @@ class ANavigationList {
       "label": AText.home,
       "icon": AIcons.home,
       "screen": const Center(
-        child: Text("Home page"),
+        child: HomeScreen(),
       )
     },
     {

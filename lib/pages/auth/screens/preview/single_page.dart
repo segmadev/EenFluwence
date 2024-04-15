@@ -1,5 +1,5 @@
 import 'package:enfluwence/pages/auth/controllers/preview/preview_controller.dart';
-import 'package:enfluwence/pages/auth/screen/auth.dart';
+import 'package:enfluwence/pages/auth/screens/auth.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/widgets/buttons/primary_button.dart';

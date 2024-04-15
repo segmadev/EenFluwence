@@ -1,5 +1,5 @@
-import 'package:enfluwence/pages/auth/screen/auth.dart';
-import 'package:enfluwence/pages/auth/screen/preview/preview_list.dart';
+import 'package:enfluwence/pages/auth/screens/auth.dart';
+import 'package:enfluwence/pages/auth/screens/preview/preview_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
