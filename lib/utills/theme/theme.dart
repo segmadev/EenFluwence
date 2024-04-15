@@ -9,6 +9,7 @@ class AAppTheme {
   AAppTheme._();
   // light theme settings
   static ThemeData lightTheme = ThemeData(
+      fontFamily: 'raleway',
       useMaterial3: true,
       brightness: Brightness.light,
       primaryColor: AColor.lbackground,
@@ -19,6 +20,7 @@ class AAppTheme {
       inputDecorationTheme: ATextFormFieldTheme.lightInputDecorationTheme);
   // dark theme settings
   static ThemeData darkTheme = ThemeData(
+    fontFamily: 'raleway',
     useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: AColor.dprimary,

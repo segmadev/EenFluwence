@@ -75,4 +75,7 @@ class ASizes {
   // navbar height
   static const double navBarHeight = 75.0;
   static const double navBarElevation = 1;
+
+  // balance box small size
+  static const double balanceBoxSmallHeight = 200.0;
 }

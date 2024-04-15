@@ -30,7 +30,7 @@ class NavigationMenu extends StatelessWidget {
           ),
           IconButton(
             iconSize: ASizes.iconMd,
-            icon: Icon(Icons.more_vert),
+            icon: Icon(AIcons.more_vert),
             onPressed: () {},
           ),
         ],

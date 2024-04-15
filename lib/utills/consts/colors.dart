@@ -2,10 +2,19 @@ import 'package:flutter/material.dart';
 
 class AColor {
   // Color gradinetColor = Color.fromRGBO(58, 44, 252, 0.604);
+  static LinearGradient gradinetColor = const LinearGradient(
+    colors: [Color(0xff5634ff), Color(0xff766aff), Color(0xff8082ff)],
+    stops: [0, 0.5, 1],
+    begin: Alignment(0.1, 0.1),
+    end: Alignment(-1.0, -0.2),
+  );
+
 // dbackground
   static const dbackground = Color(0xff1A1A27);
 // lbackground
   static const lbackground = Color(0xffF0F0F0);
+  // scolor
+  static const scolor = Color(0xff4318FF);
 // dprimary
   static const dprimary = Color(0xffF0F0F0);
 // lprimary

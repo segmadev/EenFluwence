@@ -1,3 +1,4 @@
+import 'package:enfluwence/pages/influencers/screens/wallet/balance.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/helpers/helper_functions.dart';
 import 'package:enfluwence/widgets/appbar/appbar.dart';
@@ -10,10 +11,26 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: ASizes.defaultSpace),
-          width: AHelperFunctions.screenWidth(),
-          child: Text("Home"),
+        child: Column(
+          children: [
+            SizedBox(height: ASizes.spaceBtwSections),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: ASizes.defaultSpace),
+              width: AHelperFunctions.screenWidth(),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: 100,
+                    child: Text("March 27 2024"),
+                  ),
+                  Balance(
+                    isSmall: true,
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

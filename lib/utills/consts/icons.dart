@@ -8,6 +8,9 @@ class AIcons {
   static const IconData widget = Icons.widgets_outlined;
   static const IconData reload = Icons.refresh_outlined;
 
+  static const IconData more_vert = Icons.more_vert;
+  static const IconData more_horiz = Icons.more_horiz;
+
   // AppBar Icons
   static const IconData back = Icons.arrow_back_ios_outlined;
   static const IconData notification = Icons.notifications_active_rounded;
