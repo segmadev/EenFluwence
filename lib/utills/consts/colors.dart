@@ -21,7 +21,8 @@ class AColor {
 // lprimary
   static const lprimary = Color(0xff161B25);
 // success
-  static const success = Color(0xff86FF8B);
+  static const lightSuccess = Color(0xff86FF8B);
+  static const darkSuccess = Color(0xff02B70A);
 // danger
   static const danger = Color(0xffEE5D50);
 // warning

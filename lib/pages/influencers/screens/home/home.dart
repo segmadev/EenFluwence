@@ -1,6 +1,10 @@
 import 'package:enfluwence/pages/influencers/screens/campaings/task_button.dart';
 import 'package:enfluwence/pages/influencers/screens/home/home_header.dart';
+import 'package:enfluwence/pages/influencers/screens/wallet/fund_account_botton.dart';
+import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/size.dart';
+import 'package:enfluwence/utills/consts/text.dart';
+import 'package:enfluwence/widgets/buttons/round_button.dart';
 import 'package:enfluwence/widgets/containers/card.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +24,8 @@ class HomeScreen extends StatelessWidget {
               ACard(
                 child: Column(children: [
                   TaskButton(),
+                  SizedBox(height: ASizes.md),
+                  FundAccountButton(),
                 ]),
               ),
             ],
