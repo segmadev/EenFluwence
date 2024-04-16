@@ -4,19 +4,24 @@ import 'package:enfluwence/utills/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class ACard extends StatelessWidget {
-  const ACard({super.key, required this.child, this.width = double.infinity});
+  const ACard(
+      {super.key,
+      required this.child,
+      this.width = double.infinity,
+      this.backgroundColor});
   final Widget child;
   final double width;
+  final Color? backgroundColor;
   @override
   Widget build(BuildContext context) {
-    var isDark = AHelperFunctions.isDarkMode(context);
     return Column(
       children: [
         const SizedBox(height: ASizes.md),
         Container(
           width: width,
           decoration: BoxDecoration(
-            color: isDark ? AColor.black.withOpacity(0.3) : AColor.white,
+            color: backgroundColor ??
+                AHelperFunctions.getCardBackgroundColor(context),
             borderRadius: BorderRadius.circular(ASizes.borderRadiusLg),
           ),
           child: Padding(

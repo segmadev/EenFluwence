@@ -33,7 +33,7 @@ class SingleTransaction extends StatelessWidget {
               ]),
             ),
             // amount
-            AHelperFunctions.moneyFormart(trans['amount'], trans['type']),
+            AHelperFunctions.moneyFormart(trans['amount'], type: trans['type']),
           ],
         ),
         SizedBox(height: ASizes.spaceBtwItems),

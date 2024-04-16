@@ -49,6 +49,11 @@ class AHelperFunctions {
     );
   }
 
+  static Color getCardBackgroundColor(context) {
+    var isDark = AHelperFunctions.isDarkMode(context);
+    return isDark ? AColor.black.withOpacity(0.3) : AColor.white;
+  }
+
   static void showAlert(String title, String message) {
     showDialog(
       context: Get.context!,
