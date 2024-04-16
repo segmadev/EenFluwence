@@ -1,4 +1,7 @@
 import 'package:enfluwence/utills/consts/asset_paths.dart';
+import 'package:enfluwence/utills/consts/colors.dart';
+import 'package:enfluwence/utills/consts/config.dart';
+import 'package:enfluwence/utills/consts/size.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -118,5 +121,41 @@ class AHelperFunctions {
       wrappedList.add(Row(children: rowChildren));
     }
     return wrappedList;
+  }
+
+  static String fomartDate(int timestamp) {
+    DateTime now = DateTime.now();
+    DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(
+        timestamp.toString().length <= 12 ? timestamp * 1000 : timestamp);
+
+    return dateTime.year == now.year &&
+            dateTime.month == now.month &&
+            dateTime.day == now.day
+        ? 'Today, ${DateFormat.Hm().format(dateTime)}'
+        : DateFormat('yyyy-MM-dd HH:mm').format(dateTime);
+  }
+
+  static dynamic moneyFormart(num amount,
+      {dynamic type = null, bool withColor = true}) {
+    var fAmount =
+        NumberFormat.currency(locale: AConfig.locale, symbol: AConfig.symbol)
+            .format(amount);
+    fAmount = fAmount.endsWith('.00')
+        ? fAmount.substring(0, fAmount.length - 3)
+        : fAmount;
+    fAmount = type != null
+        ? type == "debit"
+            ? "-$fAmount"
+            : "+$fAmount"
+        : fAmount;
+    return !withColor
+        ? fAmount
+        : Text(
+            fAmount,
+            style: TextStyle(
+              color: type == "debit" ? AColor.danger : AColor.lightSuccess,
+              fontSize: ASizes.fontSizeMd,
+            ),
+          );
   }
 }

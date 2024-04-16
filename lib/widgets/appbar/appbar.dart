@@ -30,13 +30,16 @@ class AAppBar extends StatelessWidget implements PreferredSizeWidget {
         padding: const EdgeInsets.symmetric(vertical: 0, horizontal: ASizes.lg),
         child: AppBar(
             titleSpacing: ASizes.sm,
+            titleTextStyle: TextStyle(color: AColor.appBarText),
             automaticallyImplyLeading: false,
             title: showBackArrow ? const Text(AText.back) : title,
             leadingWidth: showBackArrow ? 30 : leadingWidth,
             leading: showBackArrow
                 ? TextButton(
                     style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero, alignment: Alignment.center),
+                        iconColor: AColor.appBarText,
+                        padding: EdgeInsets.zero,
+                        alignment: Alignment.center),
                     onPressed: () => Get.back(),
                     child: const Icon(
                       AIcons.back,

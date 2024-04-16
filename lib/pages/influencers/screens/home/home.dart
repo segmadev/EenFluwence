@@ -1,10 +1,8 @@
 import 'package:enfluwence/pages/influencers/screens/campaings/task_button.dart';
 import 'package:enfluwence/pages/influencers/screens/home/home_header.dart';
 import 'package:enfluwence/pages/influencers/screens/wallet/fund_account_botton.dart';
-import 'package:enfluwence/utills/consts/colors.dart';
+import 'package:enfluwence/pages/transactions/screens/transactions_list.dart';
 import 'package:enfluwence/utills/consts/size.dart';
-import 'package:enfluwence/utills/consts/text.dart';
-import 'package:enfluwence/widgets/buttons/round_button.dart';
 import 'package:enfluwence/widgets/containers/card.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +11,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: ASizes.defaultSpace),
@@ -26,6 +24,10 @@ class HomeScreen extends StatelessWidget {
                   TaskButton(),
                   SizedBox(height: ASizes.md),
                   FundAccountButton(),
+                  SizedBox(height: ASizes.md),
+                  TransactionsList(
+                    heading: "Recent Spending",
+                  ),
                 ]),
               ),
             ],

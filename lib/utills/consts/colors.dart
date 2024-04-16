@@ -10,6 +10,7 @@ class AColor {
   );
 // app bar bg
   static const appBarBg = Color.fromARGB(255, 10, 10, 15);
+  static const appBarText = Colors.white;
 // dbackground
   static const dbackground = Color(0xff1A1A27);
 // lbackground

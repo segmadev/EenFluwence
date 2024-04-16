@@ -27,18 +27,23 @@ class Balance extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Available Balance",
-                    style: Theme.of(context).textTheme.labelSmall),
+                    style: TextStyle(
+                      color: AColor.white,
+                    )),
                 Text(
                   "N250,215",
                   style: TextStyle().copyWith(
-                      fontSize:
-                          !isSmall ? ASizes.fontSizeLg : ASizes.fontSizeMd),
+                    color: AColor.white,
+                    fontSize: !isSmall ? ASizes.fontSizeLg : ASizes.fontSizeMd,
+                    fontWeight: FontWeight.w500,
+                  ),
                 )
               ],
             ),
             IconButton(
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(),
+                color: AColor.white,
                 onPressed: () {},
                 icon: Icon(AIcons.more_horiz))
           ],
