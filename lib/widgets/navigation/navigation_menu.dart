@@ -1,4 +1,5 @@
 import 'package:enfluwence/pages/influencers/models/user.dart';
+import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/widgets/appbar/appbar.dart';
@@ -21,7 +22,7 @@ class NavigationMenu extends StatelessWidget {
         leadingWidth: 40,
         leading: AProfile.profileAvatar,
         title: Text(User.info['name'] ?? "Undfined",
-            style: Theme.of(context).textTheme.titleMedium),
+            style: TextStyle(color: AColor.appBarText)),
         actions: [
           IconButton(
             iconSize: ASizes.iconMd,
