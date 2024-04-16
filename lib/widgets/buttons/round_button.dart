@@ -1,3 +1,6 @@
+import 'package:enfluwence/utills/consts/colors.dart';
+import 'package:enfluwence/utills/consts/size.dart';
+import 'package:enfluwence/utills/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class RoundButton extends StatelessWidget {
@@ -7,32 +10,41 @@ class RoundButton extends StatelessWidget {
     this.onPressed,
     this.color,
     this.child,
+    this.width,
+    this.height,
   });
   final String name;
   final void Function()? onPressed;
   final Color? color;
   final Widget? child;
+  final double? width;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          primary: color ?? Theme.of(context).primaryColor,
-          onPrimary: color != null
-              ? color?.withOpacity(0.7)
-              : Theme.of(context).primaryColor.withOpacity(0.7),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(100),
+        width: width ?? ASizes.buttonWidth,
+        height: height ?? null,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: color ?? Theme.of(context).primaryColor,
+            onPrimary: color != null
+                ? color?.withOpacity(0.7)
+                : Theme.of(context).primaryColor.withOpacity(0.7),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(100),
+            ),
           ),
-        ),
-        onPressed: onPressed ?? () {},
-        child: Center(
+          onPressed: onPressed ?? () {},
+          child: Center(
             child: child != null
                 ? child
-                : Text(name, style: Theme.of(context).textTheme.labelMedium)),
-      ),
-    );
+                : Text(name,
+                    style: TextStyle(
+                        color: AHelperFunctions.isDarkMode(context)
+                            ? AColor.black
+                            : AColor.white)),
+          ),
+        ));
   }
 }
