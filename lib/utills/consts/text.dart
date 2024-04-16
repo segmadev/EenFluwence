@@ -5,13 +5,15 @@ class AText {
   static const String wallet = "Wallet";
   static const String more = "More";
 
+  static const String completed = "Completed";
+  static const String inComplete = "In Complete";
+
   static const String createTask = "Create Task";
   static const String fundAccount = "Fund Account";
   static const String transactionHeading = "Transactions";
 
   static const String skip = "Skip";
   static const String back = "Back";
-  
 
   static const String signup = "Sign Up";
   static const String signin = "Sign In";

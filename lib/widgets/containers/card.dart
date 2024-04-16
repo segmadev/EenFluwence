@@ -8,10 +8,12 @@ class ACard extends StatelessWidget {
       {super.key,
       required this.child,
       this.width = double.infinity,
-      this.backgroundColor});
+      this.backgroundColor,
+      this.padding});
   final Widget child;
   final double width;
   final Color? backgroundColor;
+  final double? padding;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,7 +27,7 @@ class ACard extends StatelessWidget {
             borderRadius: BorderRadius.circular(ASizes.borderRadiusLg),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(ASizes.md),
+            padding: EdgeInsets.all(padding ?? ASizes.md),
             child: child,
           ),
         )

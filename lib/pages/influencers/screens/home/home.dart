@@ -1,9 +1,13 @@
+import 'package:enfluwence/pages/influencers/models/tasks.dart';
+import 'package:enfluwence/pages/influencers/screens/campaings/campaign_list.dart';
 import 'package:enfluwence/pages/influencers/screens/campaings/task_button.dart';
 import 'package:enfluwence/pages/influencers/screens/home/home_header.dart';
 import 'package:enfluwence/pages/influencers/screens/home/totals.dart';
 import 'package:enfluwence/pages/influencers/screens/wallet/fund_account_botton.dart';
 import 'package:enfluwence/pages/transactions/screens/transactions_list.dart';
+import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/size.dart';
+import 'package:enfluwence/widgets/containers/badge.dart';
 import 'package:enfluwence/widgets/containers/card.dart';
 import 'package:enfluwence/widgets/header/session_header.dart';
 import 'package:flutter/material.dart';
@@ -13,11 +17,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List recentCampaign = Tasks.getCampaign();
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: ASizes.defaultSpace),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: ASizes.md),
               const HomeHeader(),
@@ -36,6 +42,10 @@ class HomeScreen extends StatelessWidget {
               const SectionHeader(
                 title: "Campaign Tasks",
                 textButton: "View all",
+              ),
+              CampaignList(
+                list: recentCampaign,
+                title: "Recent Campaigns,",
               ),
             ],
           ),

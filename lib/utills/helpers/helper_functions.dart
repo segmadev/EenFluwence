@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:enfluwence/utills/consts/asset_paths.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/config.dart';
@@ -53,6 +55,13 @@ class AHelperFunctions {
     var isDark = AHelperFunctions.isDarkMode(context);
     return isDark ? AColor.black.withOpacity(0.3) : AColor.white;
   }
+
+
+T getRandomElement<T>(List<T> list) {
+    final random = new Random();
+    var i = random.nextInt(list.length);
+    return list[i];
+}
 
   static void showAlert(String title, String message) {
     showDialog(
