@@ -9,6 +9,7 @@ import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/widgets/containers/badge.dart';
 import 'package:enfluwence/widgets/containers/card.dart';
+import 'package:enfluwence/widgets/containers/page_container.dart';
 import 'package:enfluwence/widgets/header/session_header.dart';
 import 'package:flutter/material.dart';
 
@@ -18,39 +19,31 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List recentCampaign = Tasks.getCampaign();
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: ASizes.defaultSpace),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: ASizes.md),
-              const HomeHeader(),
-              ACard(
-                child: Column(children: [
-                  const TaskButton(),
-                  const SizedBox(height: ASizes.md),
-                  const FundAccountButton(),
-                  const SizedBox(height: ASizes.md),
-                  TransactionsList(
-                    heading: "Recent Spending",
-                  ),
-                ]),
-              ),
-              const Totals(),
-              const SectionHeader(
-                title: "Campaign Tasks",
-                textButton: "View all",
-              ),
-              CampaignList(
-                list: recentCampaign,
-                title: "Recent Campaigns,",
-              ),
-            ],
-          ),
+    return PageContainer(
+      children: [
+        const SizedBox(height: ASizes.md),
+        const HomeHeader(),
+        ACard(
+          child: Column(children: [
+            const TaskButton(),
+            const SizedBox(height: ASizes.md),
+            const FundAccountButton(),
+            const SizedBox(height: ASizes.md),
+            TransactionsList(
+              heading: "Recent Spending",
+            ),
+          ]),
         ),
-      ),
+        const Totals(),
+        const SectionHeader(
+          title: "Campaign Tasks",
+          textButton: "View all",
+        ),
+        CampaignList(
+          list: recentCampaign,
+          title: "Recent Campaigns,",
+        ),
+      ],
     );
   }
 }
