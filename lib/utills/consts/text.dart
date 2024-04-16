@@ -9,6 +9,8 @@ class AText {
   static const String inComplete = "In Complete";
 
   static const String createTask = "Create Task";
+  static const String campaignTask = "Campaign Tasks";
+
   static const String fundAccount = "Fund Account";
   static const String transactionHeading = "Transactions";
 
