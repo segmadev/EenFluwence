@@ -5,16 +5,19 @@ import 'package:enfluwence/widgets/buttons/round_button.dart';
 import 'package:flutter/material.dart';
 
 class FundAccountButton extends StatelessWidget {
-  const FundAccountButton({super.key});
+  const FundAccountButton({super.key, this.backgroundColor, this.color});
+  final Color? backgroundColor;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
-    return const RoundButton(
-      color: AColor.darkSuccess,
+    return RoundButton(
+      color: backgroundColor ?? AColor.darkSuccess,
+      width: double.infinity,
       child: Text(
         AText.fundAccount,
-        style:
-            TextStyle(color: AColor.lightSuccess, fontSize: ASizes.fontSizeSm),
+        style: TextStyle(
+            color: color ?? AColor.white, fontSize: ASizes.fontSizeSm),
       ),
     );
   }

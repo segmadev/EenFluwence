@@ -19,7 +19,7 @@ class ABadge extends StatelessWidget {
       ),
       width: 120,
       backgroundColor: color != null
-          ? color!.withOpacity(0.2)
+          ? color!.withOpacity(0.4)
           : AHelperFunctions.getCardBackgroundColor(context),
       padding: ASizes.sm,
     );

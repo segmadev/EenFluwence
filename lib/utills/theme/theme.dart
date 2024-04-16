@@ -17,7 +17,9 @@ class AAppTheme {
       textTheme: ATextTheme.lightTextTheme,
       appBarTheme: AAppBarTheme.lightAppBarTheme,
       elevatedButtonTheme: AElevatedButtonTheme.lightElevatedButtonTheme,
-      inputDecorationTheme: ATextFormFieldTheme.lightInputDecorationTheme);
+      inputDecorationTheme: ATextFormFieldTheme.lightInputDecorationTheme,
+      
+      );
   // dark theme settings
   static ThemeData darkTheme = ThemeData(
     fontFamily: 'raleway',
