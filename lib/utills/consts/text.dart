@@ -13,6 +13,7 @@ class AText {
 
   static const String fundAccount = "Fund Account";
   static const String transactionHeading = "Transactions";
+  static const String linkedAccounts = "Linked Accounts";
 
   static const String skip = "Skip";
   static const String back = "Back";

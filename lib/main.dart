@@ -14,6 +14,7 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
+      // themeMode: ThemeMode.light,
       theme: AAppTheme.lightTheme,
       darkTheme: AAppTheme.darkTheme,
       home: const Scaffold(body: APagePreview()),
@@ -27,7 +28,7 @@ class MainApp extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp.router(
-//       routeInformationProvider: ARouter().router.routeInformationProvider,
+//       routeInformationColor.fromARGB(255, 190, 149, 0)InformationProvider,
 //       debugShowCheckedModeBanner: false,
 //       themeMode: ThemeMode.system,
 //       theme: AAppTheme.lightTheme,

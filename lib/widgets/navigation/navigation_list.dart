@@ -1,5 +1,6 @@
 import 'package:enfluwence/pages/influencers/screens/campaings/campaign_page.dart';
 import 'package:enfluwence/pages/influencers/screens/home/home.dart';
+import 'package:enfluwence/pages/influencers/screens/wallet/wallet_page.dart';
 import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class ANavigationList {
       "label": AText.wallet,
       "icon": AIcons.wallet,
       "screen": const Center(
-        child: Text("Wallet page"),
+        child: WalletScreen(),
       )
     },
     {
