@@ -9,26 +9,31 @@ class ACard extends StatelessWidget {
       required this.child,
       this.width = double.infinity,
       this.backgroundColor,
-      this.padding});
+      this.padding,
+      this.onTap});
   final Widget child;
   final double width;
   final Color? backgroundColor;
   final double? padding;
+  final dynamic? onTap;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         const SizedBox(height: ASizes.md),
-        Container(
-          width: width,
-          decoration: BoxDecoration(
-            color: backgroundColor ??
-                AHelperFunctions.getCardBackgroundColor(context),
-            borderRadius: BorderRadius.circular(ASizes.borderRadiusLg),
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(padding ?? ASizes.md),
-            child: child,
+        InkWell(
+          onTap: onTap != null ? () => onTap : null,
+          child: Container(
+            width: width,
+            decoration: BoxDecoration(
+              color: backgroundColor ??
+                  AHelperFunctions.getCardBackgroundColor(context),
+              borderRadius: BorderRadius.circular(ASizes.borderRadiusLg),
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(padding ?? ASizes.md),
+              child: child,
+            ),
           ),
         )
       ],
