@@ -2,6 +2,7 @@ import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/helpers/helper_functions.dart';
+import 'package:enfluwence/widgets/containers/CircleIcon.dart';
 import 'package:enfluwence/widgets/containers/card.dart';
 import 'package:flutter/material.dart';
 
@@ -29,14 +30,10 @@ class TotalCard extends StatelessWidget {
             backgroudColor ?? AHelperFunctions.getCardBackgroundColor(context),
         width: (AHelperFunctions.screenWidth() / 2) - (ASizes.defaultSpace + 6),
         child: Row(children: [
-          CircleAvatar(
-            backgroundColor: iconBackground ?? AColor.blue.withOpacity(0.2),
-            child: IconButton(
-              color: iconColor ?? AColor.blue,
-              icon: Icon(icon ?? AIcons.more_horiz),
-              // style: const ButtonStyle(backgroundColor: AColor.blue),
-              onPressed: () {},
-            ),
+          CircleIcon(
+            color: iconColor,
+            icon: icon,
+            backgoundColor: iconBackground,
           ),
           const SizedBox(width: ASizes.sm),
           Column(

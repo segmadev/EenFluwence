@@ -14,7 +14,10 @@ class CampaignList extends StatelessWidget {
         Text(title ?? "", style: Theme.of(context).textTheme.bodySmall),
         Column(
           children: list.map((campaign) {
-            return SingleCampaign(campaign: campaign);
+            return SingleCampaign(
+              campaign: campaign,
+              showIcon: false,
+            );
           }).toList(),
         ),
       ],

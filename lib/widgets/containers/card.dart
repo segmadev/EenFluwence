@@ -22,7 +22,7 @@ class ACard extends StatelessWidget {
       children: [
         const SizedBox(height: ASizes.md),
         InkWell(
-          onTap: onTap != null ? () => onTap : null,
+          onTap: onTap,
           child: Container(
             width: width,
             decoration: BoxDecoration(

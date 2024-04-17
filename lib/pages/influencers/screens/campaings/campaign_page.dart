@@ -29,6 +29,7 @@ class CampaignScreen extends StatelessWidget {
         CampaignList(
           list: campaignList,
           title: "Today,",
+          
         ),
       ],
     );
