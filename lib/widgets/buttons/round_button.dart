@@ -22,15 +22,17 @@ class RoundButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AHelperFunctions.isDarkMode(context);
     return SizedBox(
         width: width ?? ASizes.buttonWidth,
         height: height ?? null,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            primary: color ?? Theme.of(context).primaryColor,
-            onPrimary: color != null
+            foregroundColor: color != null
                 ? color?.withOpacity(0.7)
                 : Theme.of(context).primaryColor.withOpacity(0.7),
+            backgroundColor:
+                color ?? (isDark ? AColor.dprimary : AColor.lprimary),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100),
             ),

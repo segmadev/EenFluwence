@@ -6,11 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
   @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+  @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: Column(
         children: [
@@ -25,6 +31,8 @@ class SignInScreen extends StatelessWidget {
             decoration: const InputDecoration(
                 labelText: AText.password, suffixIcon: Icon(Iconsax.eye_slash)),
           ),
+          const SizedBox(height: ASizes.spaceBtwInputFields),
+
           const SizedBox(height: ASizes.spaceBtwInputFields),
           Row(
             children: [

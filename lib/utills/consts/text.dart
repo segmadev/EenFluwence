@@ -4,6 +4,13 @@ class AText {
   static const String campaigns = "Campaigns";
   static const String wallet = "Wallet";
   static const String more = "More";
+  // more navigation list
+  static const String profile = "Profile";
+  static const String settings = "Settings";
+  static const String support = "Support";
+  static const String legal = "Legal";
+  static const String about = "About Taskie";
+  static const String logOut = "Log Out";
 
   static const String completed = "Completed";
   static const String inComplete = "In Complete";

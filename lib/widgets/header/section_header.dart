@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 
 class SectionHeader extends StatelessWidget {
   const SectionHeader(
-      {super.key, required this.title, this.textButton, this.textAction});
+      {super.key,
+      required this.title,
+      this.textButton,
+      this.textAction,
+      this.paragraph});
   final String title;
   final String? textButton;
   final void Function()? textAction;
+  final String? paragraph;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +37,20 @@ class SectionHeader extends StatelessWidget {
                   : Text(""),
             ],
           ),
+          paragraph != null
+              ? Column(
+                  children: [
+                    SizedBox(
+                      height: ASizes.sm,
+                    ),
+                    Text(
+                      paragraph ?? "",
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ],
+                )
+              : SizedBox(),
           SizedBox(
             height: ASizes.md,
           ),

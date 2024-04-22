@@ -13,7 +13,10 @@ class AIcons {
 
   static const IconData plus = Icons.add_circle_rounded;
 
+  static const IconData logout = Icons.logout_outlined;
+
   // AppBar Icons
   static const IconData back = Icons.arrow_back_ios_outlined;
+  static const IconData forward = Icons.arrow_forward_ios_outlined;
   static const IconData notification = Icons.notifications_active_rounded;
 }

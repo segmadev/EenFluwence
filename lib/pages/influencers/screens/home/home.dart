@@ -1,6 +1,6 @@
 import 'package:enfluwence/pages/influencers/models/tasks.dart';
-import 'package:enfluwence/pages/influencers/screens/campaings/campaign_list.dart';
-import 'package:enfluwence/pages/influencers/screens/campaings/task_button.dart';
+import 'package:enfluwence/pages/influencers/screens/tasks/campaign/campaign_list.dart';
+import 'package:enfluwence/pages/influencers/screens/tasks/task_button.dart';
 import 'package:enfluwence/pages/influencers/screens/home/home_header.dart';
 import 'package:enfluwence/pages/influencers/screens/home/totals.dart';
 import 'package:enfluwence/pages/influencers/screens/wallet/fund_account_botton.dart';
@@ -8,7 +8,7 @@ import 'package:enfluwence/pages/transactions/screens/transactions_list.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/widgets/containers/card.dart';
 import 'package:enfluwence/widgets/containers/page_container.dart';
-import 'package:enfluwence/widgets/header/session_header.dart';
+import 'package:enfluwence/widgets/header/section_header.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

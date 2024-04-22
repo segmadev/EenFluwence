@@ -1,4 +1,4 @@
-import 'package:enfluwence/pages/influencers/screens/campaings/single_campaign.dart';
+import 'package:enfluwence/pages/influencers/screens/tasks/campaign/single_campaign.dart';
 import 'package:flutter/material.dart';
 
 class CampaignList extends StatelessWidget {

@@ -17,9 +17,11 @@ dependencies:
   iconsax: ^0.0.8
   intl: ^0.19.0
   smooth_page_indicator: ^1.1.0
+  syncfusion_flutter_charts: ^25.1.40
+  syncfusion_flutter_datepicker: 25.1.40
   timer_count_down: ^2.2.2
   url_launcher: ^6.2.4
-  
+    
 dev_dependencies:
   flutter_test:
     sdk: flutter
