@@ -1,4 +1,5 @@
 import 'package:enfluwence/pages/influencers/models/user.dart';
+import 'package:enfluwence/pages/influencers/screens/profile/profile.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';
@@ -20,9 +21,18 @@ class NavigationMenu extends StatelessWidget {
       appBar: AAppBar(
         showBackArrow: false,
         leadingWidth: 40,
-        leading: AProfile.profileAvatar,
-        title: Text(User.info['name'] ?? "Undfined",
-            style: TextStyle(color: AColor.appBarText)),
+        leading: InkWell(
+            onTap: () {
+              Get.to(ProfilePage());
+            },
+            child: AProfile.profileAvatar),
+        title: InkWell(
+          onTap: () {
+            Get.to(ProfilePage());
+          },
+          child: Text(User.info['name'] ?? "Undfined",
+              style: TextStyle(color: AColor.appBarText)),
+        ),
         actions: [
           IconButton(
             iconSize: ASizes.iconMd,
