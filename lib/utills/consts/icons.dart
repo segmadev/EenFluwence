@@ -14,6 +14,8 @@ class AIcons {
   static const IconData plus = Icons.add_circle_rounded;
 
   static const IconData logout = Icons.logout_outlined;
+  static const IconData delete = Icons.delete_rounded;
+
 
   // AppBar Icons
   static const IconData back = Icons.arrow_back_ios_outlined;

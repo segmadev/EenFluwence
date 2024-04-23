@@ -1,6 +1,5 @@
 import 'package:enfluwence/pages/influencers/models/user.dart';
 import 'package:enfluwence/utills/consts/asset_paths.dart';
-import 'package:enfluwence/utills/consts/text.dart';
 import 'package:flutter/material.dart';
 
 class AProfile {

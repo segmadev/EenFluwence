@@ -1,5 +1,6 @@
 import 'package:enfluwence/pages/influencers/screens/wallet/balance.dart';
 import 'package:enfluwence/pages/influencers/screens/wallet/fund_account_botton.dart';
+import 'package:enfluwence/pages/transactions/screens/account/linked_account.dart';
 import 'package:enfluwence/pages/transactions/screens/transactions_list.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/size.dart';
@@ -10,6 +11,7 @@ import 'package:enfluwence/widgets/buttons/round_button.dart';
 import 'package:enfluwence/widgets/containers/card.dart';
 import 'package:enfluwence/widgets/containers/page_container.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class WalletScreen extends StatelessWidget {
   const WalletScreen({super.key});
@@ -31,6 +33,9 @@ class WalletScreen extends StatelessWidget {
             ),
             const SizedBox(height: ASizes.md),
             PrimaryButton(
+              onPressed: () {
+                Get.to(LinkedAccount());
+              },
               name: AText.linkedAccounts,
               backgroundColor: AColor.lightSuccess.withOpacity(0.1),
               color: isDark ? AColor.white : AColor.black,

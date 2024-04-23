@@ -51,17 +51,21 @@ class AHelperFunctions {
     );
   }
 
+  static int getRondomNums() {
+    final Random random = Random();
+    return 1000 + random.nextInt(9000);
+  }
+
   static Color getCardBackgroundColor(context) {
     var isDark = AHelperFunctions.isDarkMode(context);
     return isDark ? AColor.black.withOpacity(0.3) : AColor.white;
   }
 
-
-T getRandomElement<T>(List<T> list) {
+  T getRandomElement<T>(List<T> list) {
     final random = new Random();
     var i = random.nextInt(list.length);
     return list[i];
-}
+  }
 
   static void showAlert(String title, String message) {
     showDialog(

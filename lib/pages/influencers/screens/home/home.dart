@@ -1,4 +1,4 @@
-import 'package:enfluwence/pages/influencers/models/tasks.dart';
+import 'package:enfluwence/pages/influencers/models/tasks_list.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/campaign/campaign_list.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/task_button.dart';
 import 'package:enfluwence/pages/influencers/screens/home/home_header.dart';

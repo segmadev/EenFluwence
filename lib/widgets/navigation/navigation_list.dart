@@ -1,3 +1,4 @@
+import 'package:enfluwence/pages/influencers/screens/profile/profile.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/campaign/campaign_page.dart';
 import 'package:enfluwence/pages/influencers/screens/home/home.dart';
 import 'package:enfluwence/pages/influencers/screens/wallet/wallet_page.dart';
@@ -27,7 +28,7 @@ class ANavigationList {
     {
       "label": AText.profile,
       "screen": const Center(
-        child: HomeScreen(),
+        child: ProfilePage(),
       )
     },
     {
