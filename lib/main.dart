@@ -1,40 +1,11 @@
-import 'package:enfluwence/pages/auth/screens/preview/page_preview.dart';
-import 'package:enfluwence/utills/theme/theme.dart';
+import 'package:enfluwence/app.dart';
+import 'package:enfluwence/data/repositories/authentication/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
-void main() {
+Future<void> main() async {
+  await GetStorage.init();
+  var myApp = Get.put(AuthenticationRepository());
   runApp(const MainApp());
 }
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
-      // themeMode: ThemeMode.light,
-      theme: AAppTheme.lightTheme,
-      darkTheme: AAppTheme.darkTheme,
-      home: const Scaffold(body: APagePreview()),
-    );
-  }
-}
-
-// backup using go_router
-// class MainApp extends StatelessWidget {
-//   const MainApp({super.key});
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp.router(
-//       routeInformationColor.fromARGB(255, 190, 149, 0)InformationProvider,
-//       debugShowCheckedModeBanner: false,
-//       themeMode: ThemeMode.system,
-//       theme: AAppTheme.lightTheme,
-//       darkTheme: AAppTheme.darkTheme,
-//       routeInformationParser: ARouter().router.routeInformationParser,
-//       routerDelegate: ARouter().router.routerDelegate,
-//     );
-//   }
-// }

@@ -1,5 +1,6 @@
 import 'package:enfluwence/pages/auth/screens/auth.dart';
 import 'package:enfluwence/pages/auth/screens/preview/preview_list.dart';
+import 'package:enfluwence/widgets/local_storage/storage_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,6 +27,7 @@ class PreviewController extends GetxController {
   void nextPage(context) {
     // check if not last page before jump
     if (currentPageIndex.value >= pageCount) {
+      ALocalStorage().saveData("IsFirstTime", false);
       Get.to(const AuthScreen());
     } else {
       currentPageIndex.value++;
