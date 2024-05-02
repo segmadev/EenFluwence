@@ -7,6 +7,7 @@ class AAssets {
   static const String defaultProfileMale = "assets/images/profile/male.jpg";
   static const String defaultProfileFemale = "assets/images/profile/female.jpg";
   static const String defaultProfile = "assets/images/profile/default.jpg";
+  static const String docerAnimation = "assets/images/others/loader.json";
 
   // Json Url
   static const String splashUrl = "assets/data/splash.json";

@@ -9,16 +9,16 @@ class AProfile {
   );
 
   static dynamic getProfileUrl() {
-    if (User.info['profile'] != null && User.info['profile'] != "") {
-      return NetworkImage(User.info['profile']!);
+    if (User.user.avatar != null && User.user.avatar != "") {
+      return NetworkImage(User.user.avatar);
     }
 
-    if (User.info['gender'] != null && User.info['gender'] != "female") {
-      return const AssetImage(AAssets.defaultProfileFemale);
-    }
-    if (User.info['gender'] != null && User.info['gender'] != "male") {
-      return const AssetImage(AAssets.defaultProfileMale);
-    }
+    // if (User.info['gender'] != null && User.info['gender'] != "female") {
+    //   return const AssetImage(AAssets.defaultProfileFemale);
+    // }
+    // if (User.info['gender'] != null && User.info['gender'] != "male") {
+    //   return const AssetImage(AAssets.defaultProfileMale);
+    // }
 
     return const AssetImage(AAssets.defaultProfile);
   }

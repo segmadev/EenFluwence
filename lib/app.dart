@@ -1,3 +1,4 @@
+import 'package:enfluwence/bindings/general_bindings.dart';
 import 'package:enfluwence/pages/auth/screens/preview/page_preview.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/helpers/helper_functions.dart';
@@ -20,6 +21,7 @@ class MainApp extends StatelessWidget {
       // themeMode: ThemeMode.light,
       theme: AAppTheme.lightTheme,
       darkTheme: AAppTheme.darkTheme,
+      initialBinding: GeneralBindings(),
       home: Scaffold(
           // body: APagePreview()
           body: Center(

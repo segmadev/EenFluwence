@@ -1,6 +1,6 @@
 import 'package:enfluwence/pages/auth/screens/auth.dart';
 import 'package:enfluwence/pages/auth/screens/preview/preview_list.dart';
-import 'package:enfluwence/widgets/local_storage/storage_utility.dart';
+import 'package:enfluwence/utills/local_storage/storage_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

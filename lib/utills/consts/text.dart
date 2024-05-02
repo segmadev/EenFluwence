@@ -63,4 +63,7 @@ class AText {
   static const String success = "Success";
   static const String accountCreatedSuccess =
       "You’ve account has been verified successfully";
+
+  // processing
+  static const String processInfo = 'processing...';
 }

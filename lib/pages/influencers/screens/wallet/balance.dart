@@ -1,6 +1,8 @@
+import 'package:enfluwence/pages/influencers/models/user.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';
+import 'package:enfluwence/utills/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class Balance extends StatelessWidget {
@@ -31,7 +33,7 @@ class Balance extends StatelessWidget {
                       color: AColor.white,
                     )),
                 Text(
-                  "N250,215",
+                  AHelperFunctions.moneyFormart(User.user.),
                   style: TextStyle().copyWith(
                     color: AColor.white,
                     fontSize: !isSmall ? ASizes.fontSizeLg : ASizes.fontSizeMd,

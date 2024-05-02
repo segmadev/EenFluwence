@@ -27,7 +27,7 @@ class ProfilePage extends StatelessWidget {
                 children: [
                   AProfile.profileAvatar,
                   SizedBox(width: 10),
-                  TitleP(title: User.info['name'], paragraph: "Edit Profile"),
+                  TitleP(title: User.user.username, paragraph: "Edit Profile"),
                 ],
               ),
             ],
