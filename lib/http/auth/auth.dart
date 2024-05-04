@@ -66,4 +66,15 @@ class AuthApi {
     final response = await http.post(url, headers: headers, body: body);
     return response;
   }
+
+  static Future<dynamic> resendotp(String email) async {
+    // var string = '{"email": "$email"}';
+    // var bodyData = jsonEncode(string);
+    var pathUrl = ApiUrl.base_url + ApiUrl.resend_otp_code;
+    final url = Uri.parse(pathUrl); //Repclace Your Endpoint
+    final headers = {'Content-Type': 'application/json'};
+    final body = json.encode({"email": "$email"});
+    final response = await http.post(url, headers: headers, body: body);
+    return ApiHelper.processResponse(response);
+  }
 }

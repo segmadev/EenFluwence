@@ -1,13 +1,7 @@
-import 'dart:convert';
 import 'dart:core';
-
 import 'package:enfluwence/data/repositories/authentication/authentication_repository.dart';
 import 'package:enfluwence/http/auth/auth.dart';
 import 'package:enfluwence/pages/auth/models/siginin.dart';
-import 'package:enfluwence/pages/auth/models/signup.dart';
-import 'package:enfluwence/pages/auth/screens/OTP/otp.dart';
-import 'package:enfluwence/pages/influencers/models/user.dart';
-import 'package:enfluwence/pages/influencers/screens/home/home.dart';
 import 'package:enfluwence/utills/consts/asset_paths.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/utills/helpers/network_manager.dart';
@@ -43,6 +37,8 @@ class SignInController extends GetxController {
       var user = response['data']['user'];
       // save auth user data in localStorage
       var storage = ALocalStorage();
+      await storage.removeData("currentUser");
+      await storage.removeData("token");
       await storage.saveData("currentUser", user);
       await storage.saveData("token", response['data']['token']);
       // show success message
@@ -50,7 +46,7 @@ class SignInController extends GetxController {
       // stop loading
       AFullScreenLoader.stopLoading();
       // redirect
-      AuthenticationRepository.instance.screenRedirect();
+      await AuthenticationRepository.instance.screenRedirect();
     } catch (e) {
       // handle error
       Get.snackbar('Oh Snap!', e.toString());

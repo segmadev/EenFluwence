@@ -73,19 +73,24 @@ class OTPScreen extends StatelessWidget {
                           backgroundColor: AColor.transparent,
                         ),
                         onPressed: () {},
-                        child: Row(
-                          children: [
-                            Icon(
-                              AIcons.reload,
-                              color: Theme.of(context).primaryColor,
-                              size: ASizes.fontSizeSm,
-                            ),
-                            Text(
-                              AText.reSendOTP,
-                              style: Theme.of(context).textTheme.bodySmall,
-                              textAlign: TextAlign.end,
-                            ),
-                          ],
+                        child: InkWell(
+                          onTap: () {
+                            controller.resendotp();
+                          },
+                          child: Row(
+                            children: [
+                              Icon(
+                                AIcons.reload,
+                                color: Theme.of(context).primaryColor,
+                                size: ASizes.fontSizeSm,
+                              ),
+                              Text(
+                                AText.reSendOTP,
+                                style: Theme.of(context).textTheme.bodySmall,
+                                textAlign: TextAlign.end,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],

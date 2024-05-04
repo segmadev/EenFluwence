@@ -43,10 +43,12 @@ class TotalCard extends StatelessWidget {
               Text(
                 title,
                 style: Theme.of(context).textTheme.labelMedium,
+                overflow: TextOverflow.clip,
               ),
               Text(
                 value.toString(),
                 style: Theme.of(context).textTheme.headlineSmall,
+                overflow: TextOverflow.clip,
               )
             ],
           ),

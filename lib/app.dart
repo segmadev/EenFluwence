@@ -23,7 +23,6 @@ class MainApp extends StatelessWidget {
       darkTheme: AAppTheme.darkTheme,
       initialBinding: GeneralBindings(),
       home: Scaffold(
-          // body: APagePreview()
           body: Center(
               child: CircularProgressIndicator(
         color: isDark ? AColor.white : AColor.black,

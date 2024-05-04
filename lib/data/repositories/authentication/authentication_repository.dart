@@ -23,15 +23,21 @@ class AuthenticationRepository extends GetxController {
     if (deviceStorage.readData("currentUser") == null) {
       deviceStorage.saveDataIfNull("IsFirstTime", true);
       deviceStorage.readData('IsFirstTime') != true
-          ? Get.offAll(() => const AuthScreen())
-          : Get.offAll(() => const APagePreview());
+          ? Get.offAll(const AuthScreen())
+          : Get.offAll( const APagePreview());
     }
     final user = Influencer.fromJson(deviceStorage.readData("currentUser"));
     if (!user.isVerified) {
-      Get.offAll(() => const OTPScreen());
+      Get.offAll(const OTPScreen());
     } else {
-      Get.offAll(() => const NavigationMenu());
+      Get.offAll(const NavigationMenu());
     }
+  }
+
+// logout
+  void logout() async {
+    deviceStorage.clearAll();
+    screenRedirect();
   }
   // signup
 }

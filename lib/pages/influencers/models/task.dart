@@ -20,6 +20,14 @@ class Task {
     this.costPerEngagement,
     this.captions,
   });
+  static Task emptyTask() {
+    return Task(
+      taskType: "",
+      totalNumberOfEngagements: 0,
+      costPerEngagement: 0,
+      captions: null,
+    );
+  }
 
   Task copyWith({
     String? taskType,
@@ -47,7 +55,9 @@ class Task {
         "taskType": taskType,
         "totalNumberOfEngagements": totalNumberOfEngagements,
         "costPerEngagement": costPerEngagement,
-        "captions": List<dynamic>.from(captions!.map((x) => x.toJson())),
+        "captions": captions == null
+            ? {}
+            : List<dynamic>.from(captions!.map((x) => x.toJson())),
       };
 }
 
@@ -63,6 +73,14 @@ class Caption {
     this.text,
     this.url,
   });
+
+  static Caption emptyCaption() {
+    return Caption(
+      socialMedia: "",
+      text: "",
+      url: "",
+    );
+  }
 
   Caption copyWith({
     String? socialMedia,

@@ -97,5 +97,20 @@ class AValidator {
     return null;
   }
 
+  static String? validateUrl(String? value) {
+    if (value == null || value.length < 6) {
+      return 'Url is required.';
+    }
+
+    String pattern =
+        r'(http|https)://[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?';
+    RegExp regExp = new RegExp(pattern);
+
+    if (!regExp.hasMatch(value!)) {
+      return 'Please enter valid url';
+    }
+    return null;
+
 // Add more custom validators as needed for your specific requirements.
+  }
 }

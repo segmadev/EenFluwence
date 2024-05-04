@@ -1,3 +1,4 @@
+import 'package:enfluwence/data/repositories/authentication/authentication_repository.dart';
 import 'package:enfluwence/pages/auth/screens/auth.dart';
 import 'package:enfluwence/pages/influencers/screens/profile/profile.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/campaign/campaign_page.dart';
@@ -62,6 +63,9 @@ class ANavigationList {
       "color": AColor.danger.withOpacity(0.4),
       "icon": AIcons.logout,
       "screen": AuthScreen(),
+      "function": () {
+        AuthenticationRepository().logout();
+      }
     },
   ];
 }

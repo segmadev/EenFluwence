@@ -1,6 +1,9 @@
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/size.dart';
+import 'package:enfluwence/widgets/buttons/primary_button.dart';
+import 'package:enfluwence/widgets/navigation/navigation_menu.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class AAnimationLoaderWidget extends StatelessWidget {
@@ -10,13 +13,15 @@ class AAnimationLoaderWidget extends StatelessWidget {
       required this.animation,
       this.showAction = false,
       this.actionText,
-      this.onActionPressed});
+      this.onActionPressed,
+      this.heading});
 
   final String text;
   final String animation;
   final bool showAction;
   final String? actionText;
   final VoidCallback? onActionPressed;
+  final String? heading;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +31,14 @@ class AAnimationLoaderWidget extends StatelessWidget {
         children: [
           Lottie.asset(animation,
               width: MediaQuery.of(context).size.width * 0.8),
+          heading != null
+              ? Text(
+                  heading!,
+                  style: Theme.of(context).textTheme.headlineMedium,
+                )
+              : const Text(""),
           const SizedBox(
-            height: ASizes.defaultSpace,
+            height: ASizes.sm,
           ),
           Text(
             text,
@@ -40,17 +51,12 @@ class AAnimationLoaderWidget extends StatelessWidget {
           showAction
               ? SizedBox(
                   width: 250,
-                  child: OutlinedButton(
-                    onPressed: onActionPressed,
-                    style:
-                        OutlinedButton.styleFrom(backgroundColor: AColor.black),
-                    child: Text(
-                      actionText!,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .apply(color: AColor.white),
-                    ),
+                  child: PrimaryButton(
+                    onPressed: onActionPressed ??
+                        () {
+                          Get.to(NavigationMenu());
+                        },
+                    name: actionText ?? "Go Home",
                   ),
                 )
               : SizedBox(),

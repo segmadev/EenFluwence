@@ -10,7 +10,7 @@ class AFullScreenLoader {
         context: Get.overlayContext!,
         barrierDismissible: false,
         builder: (_) => PopScope(
-            canPop: false,
+            canPop: true,
             child: Container(
               color: AHelperFunctions.isDarkMode(Get.context!)
                   ? const Color.fromARGB(92, 10, 10, 10)
@@ -29,6 +29,9 @@ class AFullScreenLoader {
   }
 
   static stopLoading() {
-    Navigator.of(Get.overlayContext!).pop();
+    final overlayContext = Get.overlayContext;
+    if (overlayContext != null) {
+      Navigator.of(overlayContext, rootNavigator: true).pop();
+    }
   }
 }

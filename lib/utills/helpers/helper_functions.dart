@@ -153,8 +153,9 @@ class AHelperFunctions {
         : DateFormat('yyyy-MM-dd HH:mm').format(dateTime);
   }
 
-  static dynamic moneyFormart(num amount,
+  static dynamic moneyFormart(dynamic amount,
       {dynamic type = null, bool withColor = true}) {
+    amount = double.parse(amount.toString());
     var fAmount =
         NumberFormat.currency(locale: AConfig.locale, symbol: AConfig.symbol)
             .format(amount);

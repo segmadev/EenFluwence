@@ -1,3 +1,4 @@
+import 'package:enfluwence/pages/general/general_user.dart';
 import 'package:enfluwence/pages/influencers/models/user.dart';
 import 'package:enfluwence/pages/influencers/screens/profile/profile.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
@@ -15,6 +16,7 @@ class NavigationMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final generalUserController = Get.put(GeneralUserController());
     final controller = Get.put(NavigationController());
     final navigationList = ANavigationList.navigationList;
     return Scaffold(

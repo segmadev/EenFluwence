@@ -1,6 +1,7 @@
 import 'package:enfluwence/pages/influencers/controllers/task_controller.dart';
 import 'package:enfluwence/pages/influencers/models/task.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/campaign/caption_form.dart';
+import 'package:enfluwence/pages/influencers/screens/tasks/campaign/single_caption.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/widgets/buttons/round_button.dart';
@@ -22,7 +23,7 @@ class AddCaption extends StatefulWidget {
 class _AddCaptionState extends State<AddCaption> {
   @override
   Widget build(BuildContext context) {
-    final TaskController taskController = Get.put(TaskController());
+    final TaskController taskController = Get.find();
     RxList<Caption> captionList = taskController.captionList;
 
     String? dropdownValue;
@@ -35,40 +36,47 @@ class _AddCaptionState extends State<AddCaption> {
               "Create your social media campaign to boost  engagements increase your audience and research etc below.",
         ),
         Obx(() => Column(
-              children: captionList.map((caption) {
-                var index = captionList.indexOf(caption);
-                print("one");
-                return CaptionForm(
-                  caption: caption,
-                );
-              }).toList(),
+              children: [
+                CaptionForm(),
+                SizedBox(height: ASizes.spaceBtwInputFields),
+                captionList.length > 0
+                    ? RoundButton(
+                        width: double.infinity,
+                        color: AColor.darkSuccess,
+                        onPressed: () {
+                          taskController.publish_task();
+                        },
+                        name: "Publish",
+                      )
+                    : SizedBox(),
+                Column(
+                  children: captionList.map((caption) {
+                    var index = captionList.indexOf(caption);
+                    return SingleCaption(
+                      caption: caption,
+                    );
+                  }).toList(),
+                ),
+              ],
             )),
-        SizedBox(width: ASizes.spaceBtwInputFields),
-        ACard(
-            onTap: () {
-              taskController.addCaption();
-            },
-            child: Text(
-              "+ Add More Caption",
-              textAlign: TextAlign.center,
-            )),
-        ACard(
-            child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            TextButton(
-                onPressed: () => Get.back(),
-                child: Text(
-                  "Previous",
-                  style: Theme.of(context).textTheme.bodyLarge,
-                )),
-            SizedBox(width: ASizes.spaceBtwInputFields),
-            RoundButton(
-              onPressed: () {},
-              name: "Next",
-            ),
-          ],
-        ))
+
+        // ACard(
+        //     child: Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //   children: [
+        //     TextButton(
+        //         onPressed: () => Get.back(),
+        //         child: Text(
+        //           "Previous",
+        //           style: Theme.of(context).textTheme.bodyLarge,
+        //         )),
+        //     SizedBox(width: ASizes.spaceBtwInputFields),
+        //     RoundButton(
+        //       onPressed: () {},
+        //       name: "Next",
+        //     ),
+        //   ],
+        // ))
       ],
     ));
   }

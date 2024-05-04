@@ -19,6 +19,29 @@ class VerifyController extends GetxController {
   final otp = TextEditingController();
   GlobalKey<FormState> verifyFromKey = GlobalKey<FormState>();
 
+  Future<void> resendotp() async {
+    try {
+      AFullScreenLoader.openLoadingDialog(
+          AText.processInfo, AAssets.docerAnimation);
+      // check inetrnet connection
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) return;
+      if (storage.readData("currentUser") == null) {
+        // show error message
+        Get.snackbar('Oh Snap!', "Error validating you.");
+        return;
+      }
+      final currentUser = Influencer.fromJson(storage.readData("currentUser"));
+      var response = await AuthApi.resendotp(currentUser.email);
+      AFullScreenLoader.stopLoading();
+      Get.snackbar('Great!', response['message']);
+    } catch (e) {
+      Get.snackbar('Oh Snap!', e.toString());
+    } finally {
+      AFullScreenLoader.stopLoading();
+    }
+  }
+
   Future<void> verifyEmail() async {
     try {
       // start loading

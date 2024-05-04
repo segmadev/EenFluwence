@@ -17,9 +17,11 @@ class MoreNavigationMenu extends StatelessWidget {
         return ACard(
             padding: ASizes.lg,
             backgroundColor: menu['color'] ?? null,
-            onTap: () {
-              Get.to(menu['screen']);
-            },
+            onTap: menu['function'] != null
+                ? menu['function']
+                : () {
+                    Get.to(menu['screen']);
+                  },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
