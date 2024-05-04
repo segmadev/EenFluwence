@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:enfluwence/http/task/task_api.dart';
 import 'package:enfluwence/pages/influencers/models/task.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/campaign/add_caption.dart';
@@ -9,6 +8,7 @@ import 'package:enfluwence/utills/helpers/helper_functions.dart';
 import 'package:enfluwence/utills/helpers/network_manager.dart';
 import 'package:enfluwence/utills/local_storage/storage_utility.dart';
 import 'package:enfluwence/utills/popups/full_screen_loader.dart';
+import 'package:enfluwence/utills/popups/snack_bar_pop.dart';
 import 'package:enfluwence/widgets/pages/success_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -82,7 +82,7 @@ class TaskController extends GetxController {
       print(storage.readData("taskData"));
       Get.to(const AddCaption());
     } catch (e) {
-      Get.snackbar('Oh Snap!', e.toString());
+      ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
     } finally {
       // AFullScreenLoader.stopLoading();
     }
@@ -96,11 +96,13 @@ class TaskController extends GetxController {
       if (!isConnected) return;
       final response = await taskApi.createTask(taskData);
       AFullScreenLoader.stopLoading();
+      ASnackBar().successSackBar(
+          title: "Great!", message: "Task Created Successfully");
       Get.to(() => SuccessSCreen(
           text: "Task Created Successfully.",
           animation: AAssets.successAnimation));
     } catch (e) {
-      Get.snackbar('Oh Snap!', e.toString());
+      ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
     } finally {
       AFullScreenLoader.stopLoading();
     }

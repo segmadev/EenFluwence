@@ -10,6 +10,7 @@ import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/utills/helpers/network_manager.dart';
 import 'package:enfluwence/utills/local_storage/storage_utility.dart';
 import 'package:enfluwence/utills/popups/full_screen_loader.dart';
+import 'package:enfluwence/utills/popups/snack_bar_pop.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -47,13 +48,13 @@ class SignUpController extends GetxController {
       var storage = ALocalStorage();
       await storage.saveData("currentUser", user);
       // show success message
-      Get.snackbar('Great!', response['message']);
+      ASnackBar().successSackBar(title: "Great!", message: response['message']);
       // naviagte to verify page
       // AFullScreenLoader.stopLoading();
       Get.to(() => const OTPScreen());
     } catch (e) {
       // handle error
-      Get.snackbar('Oh Snap!', e.toString());
+      ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
       print(e.toString());
     } finally {
       // remove loader
