@@ -153,6 +153,13 @@ class AHelperFunctions {
         : DateFormat('yyyy-MM-dd HH:mm').format(dateTime);
   }
 
+  static int dateToTimeStamp(String date) {
+    // Parse the date and time string
+    DateTime dateTime = DateTime.parse(date.split(" ")[0]);
+    // Print the timestamp
+    return dateTime.millisecondsSinceEpoch;
+  }
+
   static dynamic moneyFormart(dynamic amount,
       {dynamic type = null, bool withColor = true}) {
     amount = double.parse(amount.toString());

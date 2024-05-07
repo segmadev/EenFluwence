@@ -3,6 +3,7 @@ import 'package:enfluwence/pages/transactions/screens/single_transaction.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TransactionsList extends StatelessWidget {
   TransactionsList(
@@ -16,7 +17,7 @@ class TransactionsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List listOfTrans = transList ?? Transactions.getTrans();
+    List listOfTrans = transList ?? Transactionss.getTrans();
     // transList ??= Transactions.getTrans();
     return SizedBox(
       width: double.infinity,
@@ -38,7 +39,7 @@ class TransactionsList extends StatelessWidget {
                 trans: trans,
               );
             }).toList(),
-          )
+          ),
         ],
       ),
     );

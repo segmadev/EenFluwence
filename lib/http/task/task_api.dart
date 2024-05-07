@@ -20,8 +20,9 @@ class TaskApi extends GetxController {
       'token': 'Bearer $token'
     };
     final body = jsonEncode(bodyData);
+    print(body);
     final response = await http.post(url, headers: headers, body: body);
-    print(response.body);
+    print("Create task body: " + response.statusCode.toString());
     if (response.statusCode != 201 &&
         response.statusCode != 200 &&
         response.statusCode != 400) {

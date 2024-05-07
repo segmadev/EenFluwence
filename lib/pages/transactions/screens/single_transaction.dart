@@ -1,3 +1,5 @@
+import 'package:enfluwence/utills/consts/colors.dart';
+import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -17,23 +19,35 @@ class SingleTransaction extends StatelessWidget {
             SizedBox(
               child: Row(children: [
                 CircleAvatar(
-                  backgroundImage: NetworkImage(trans['icon']),
+                  // backgroundImage: NetworkImage(trans['icon']),
                   backgroundColor: Colors.grey.withOpacity(0.3),
+                  child: trans.type == "debit"
+                      ? Icon(
+                          AIcons.debit,
+                          color: AColor.danger,
+                        )
+                      : Icon(
+                          AIcons.credit,
+                          color: AColor.darkSuccess,
+                        ),
                 ),
                 SizedBox(width: ASizes.spaceBtwItems),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(trans['title']),
-                    Text(AHelperFunctions.fomartDate(trans['date']),
+                    Text(trans.description),
+                    Text(
+                        AHelperFunctions.fomartDate(
+                            AHelperFunctions.dateToTimeStamp(
+                                trans.date.toString() + trans.time.toString())),
                         style: Theme.of(context).textTheme.bodySmall),
                   ],
                 ),
               ]),
             ),
             // amount
-            AHelperFunctions.moneyFormart(trans['amount'], type: trans['type']),
+            AHelperFunctions.moneyFormart(trans.amount, type: trans.type),
           ],
         ),
         SizedBox(height: ASizes.spaceBtwItems),

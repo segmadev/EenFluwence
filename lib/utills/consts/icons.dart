@@ -16,9 +16,12 @@ class AIcons {
   static const IconData logout = Icons.logout_outlined;
   static const IconData delete = Icons.delete_rounded;
 
-
   // AppBar Icons
   static const IconData back = Icons.arrow_back_ios_outlined;
   static const IconData forward = Icons.arrow_forward_ios_outlined;
   static const IconData notification = Icons.notifications_active_rounded;
+
+  // debit / credit
+  static const IconData credit = Icons.arrow_circle_down;
+  static const IconData debit = Icons.arrow_circle_up;
 }

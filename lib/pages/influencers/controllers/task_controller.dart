@@ -152,6 +152,7 @@ class TaskController extends GetxController {
           AText.processInfo, AAssets.docerAnimation);
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) return;
+      // print(taskData.value.toJson());
       final response = await taskApi.createTask(taskData.value);
       AFullScreenLoader.stopLoading();
       ASnackBar().successSackBar(

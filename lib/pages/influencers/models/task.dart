@@ -60,17 +60,34 @@ class Task {
             json["questions"].map((x) => Question.fromJson(x))),
       );
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() {
+    if (taskType != "Social Media Campaign" && taskType != "Other Tasks") {
+      return {
         "taskType": taskType,
         "totalNumberOfEngagements": totalNumberOfEngagements,
         "costPerEngagement": costPerEngagement,
-        "captions": captions == null
-            ? {}
+      };
+    } else if (taskType == "Social Media Campaign") {
+      return {
+        "taskType": taskType,
+        "totalNumberOfEngagements": totalNumberOfEngagements,
+        "costPerEngagement": costPerEngagement,
+        "captions": (captions == null)
+            ? null
             : List<dynamic>.from(captions!.map((x) => x.toJson())),
-        "questions": questions == null
-            ? {}
+      };
+    } else {
+      // taskType == "Other Tasks"
+      return {
+        "taskType": taskType,
+        "totalNumberOfEngagements": totalNumberOfEngagements,
+        "costPerEngagement": costPerEngagement,
+        "questions": (questions == null)
+            ? null
             : List<dynamic>.from(questions!.map((x) => x.toJson())),
       };
+    }
+  }
 }
 
 class Caption {
@@ -119,13 +136,11 @@ class Caption {
 }
 
 class Question {
-  int? index;
   String question;
   String answerType;
   List<Choice>? choices;
 
   Question({
-    this.index,
     required this.question,
     required this.answerType,
     this.choices,
@@ -143,7 +158,6 @@ class Question {
       );
 
   factory Question.fromJson(Map<String, dynamic> json) => Question(
-        index: json["index"],
         question: json["question"],
         answerType: json["answerType"],
         choices: json["choices"] == null
@@ -152,18 +166,25 @@ class Question {
                 json["choices"]!.map((x) => Choice.fromJson(x))),
       );
 
-  Map<String, dynamic> toJson() => {
-        "index": index,
+  Map<String, dynamic> toJson() {
+    if (answerType != "Multiple Choice") {
+      return {
         "question": question,
         "answerType": answerType,
-        "choices": choices == null
-            ? []
+      };
+    } else {
+      return {
+        "question": question,
+        "answerType": answerType,
+        "choices": (choices == null)
+            ? null
             : List<dynamic>.from(choices!.map((x) => x.toJson())),
       };
+    }
+  }
 
   static Question emptyQuestion() {
     return Question(
-        index: AHelperFunctions.getRondomNums(),
         question: "",
         answerType: "",
         choices: <Choice>[Choice(text: ""), Choice(text: "")].obs);

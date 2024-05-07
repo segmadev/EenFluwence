@@ -1,3 +1,4 @@
+import 'package:enfluwence/pages/auth/controllers/influencer/influencer_controller.dart';
 import 'package:enfluwence/pages/influencers/screens/wallet/balance.dart';
 import 'package:enfluwence/pages/influencers/screens/wallet/fund_account_botton.dart';
 import 'package:enfluwence/pages/transactions/screens/account/linked_account.dart';
@@ -19,6 +20,7 @@ class WalletScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = AHelperFunctions.isDarkMode(context);
+    InfluencerController influncerController = Get.find();
     return PageContainer(
       children: [
         ACard(
@@ -42,9 +44,14 @@ class WalletScreen extends StatelessWidget {
               height: 60,
             ),
             const SizedBox(height: ASizes.md),
-            TransactionsList(
-              heading: AText.transactionHeading,
-            ),
+            Obx(() => influncerController.isLoadingRecent.value
+                ? ACard(
+                    child: Center(child: Text("Loading...")),
+                  )
+                : TransactionsList(
+                    heading: "Transactions",
+                    transList: influncerController.recentSpending!.value,
+                  )),
           ],
         )),
       ],
