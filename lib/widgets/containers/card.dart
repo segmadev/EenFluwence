@@ -4,23 +4,26 @@ import 'package:enfluwence/utills/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class ACard extends StatelessWidget {
-  const ACard(
-      {super.key,
-      required this.child,
-      this.width = double.infinity,
-      this.backgroundColor,
-      this.padding,
-      this.onTap});
+  const ACard({
+    super.key,
+    required this.child,
+    this.width = double.infinity,
+    this.backgroundColor,
+    this.padding,
+    this.onTap,
+    this.topHeight,
+  });
   final Widget child;
   final double width;
   final Color? backgroundColor;
   final double? padding;
   final dynamic? onTap;
+  final double? topHeight;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: ASizes.md),
+        SizedBox(height: topHeight ?? ASizes.md),
         InkWell(
           onTap: onTap,
           child: Container(

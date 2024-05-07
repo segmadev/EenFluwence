@@ -1,4 +1,6 @@
+import 'package:enfluwence/data/repositories/authentication/authentication_repository.dart';
 import 'package:enfluwence/pages/auth/controllers/verify/verify_controller.dart';
+import 'package:enfluwence/pages/auth/screens/auth.dart';
 import 'package:enfluwence/pages/auth/screens/success/success.dart';
 import 'package:enfluwence/pages/influencers/models/user.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
@@ -104,6 +106,18 @@ class OTPScreen extends StatelessWidget {
                       onPressed: () {
                         controller.verifyEmail();
                       }),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(
+                        onPressed: () {
+                          AuthenticationRepository.instance.logout();
+                        },
+                        child: Text(
+                          "Login Account",
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        )),
+                  )
                 ]),
               )
             ],

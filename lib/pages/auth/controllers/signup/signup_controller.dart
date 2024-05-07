@@ -31,9 +31,10 @@ class SignUpController extends GetxController {
           AText.processInfo, AAssets.docerAnimation);
       // check inetrnet connection
       final isConnected = await NetworkManager.instance.isConnected();
-      if (!isConnected) return;
+      if (!isConnected) throw "";
       // from validation
-      if (!signupFromKey.currentState!.validate()) return;
+      if (!signupFromKey.currentState!.validate())
+        throw "Fill all required fields";
       // privacy policy checkbox
 
       // Register user through API
@@ -54,11 +55,8 @@ class SignUpController extends GetxController {
       Get.to(() => const OTPScreen());
     } catch (e) {
       // handle error
-      ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
-      print(e.toString());
-    } finally {
-      // remove loader
       AFullScreenLoader.stopLoading();
+      ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
     }
   }
 }

@@ -10,6 +10,7 @@ class ARouter {
     routes: [
       GoRoute(
         name: ARouteConstants.homePage,
+        
         path: '/',
         pageBuilder: (context, state) {
           return const MaterialPage(child: APagePreview());

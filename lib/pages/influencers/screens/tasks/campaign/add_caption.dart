@@ -44,7 +44,7 @@ class _AddCaptionState extends State<AddCaption> {
                         width: double.infinity,
                         color: AColor.darkSuccess,
                         onPressed: () {
-                          taskController.publish_task();
+                          taskController.publishTask();
                         },
                         name: "Publish",
                       )

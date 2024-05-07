@@ -43,7 +43,7 @@ class _CaptionFormState extends State<CaptionForm> {
             DropdownButtonFormField(
               validator: (value) =>
                   AValidator.validateEmptyText("Social Media Platform", value),
-              value: taskController.socialMedia,
+              value: taskController.socialMedia!.value,
               hint: const Text('Select Social Media'),
               items: [
                 const DropdownMenuItem(
@@ -55,7 +55,7 @@ class _CaptionFormState extends State<CaptionForm> {
               ],
               onChanged: (String? newValue) {
                 setState(() {
-                  taskController.socialMedia = newValue!;
+                  taskController.socialMedia!.value = newValue!;
                 });
               },
             ),

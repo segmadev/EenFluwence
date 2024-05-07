@@ -24,7 +24,7 @@ class AuthenticationRepository extends GetxController {
       deviceStorage.saveDataIfNull("IsFirstTime", true);
       deviceStorage.readData('IsFirstTime') != true
           ? Get.offAll(const AuthScreen())
-          : Get.offAll( const APagePreview());
+          : Get.offAll(const APagePreview());
     }
     final user = Influencer.fromJson(deviceStorage.readData("currentUser"));
     if (!user.isVerified) {
@@ -36,7 +36,8 @@ class AuthenticationRepository extends GetxController {
 
 // logout
   void logout() async {
-    deviceStorage.clearAll();
+    deviceStorage.removeData("currentUser");
+    deviceStorage.removeData("token");
     screenRedirect();
   }
   // signup

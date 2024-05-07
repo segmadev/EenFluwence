@@ -10,6 +10,7 @@ import 'package:enfluwence/utills/helpers/network_manager.dart';
 import 'package:enfluwence/utills/local_storage/storage_utility.dart';
 import 'package:enfluwence/utills/popups/full_screen_loader.dart';
 import 'package:enfluwence/utills/popups/snack_bar_pop.dart';
+import 'package:enfluwence/widgets/pages/success_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,11 +36,10 @@ class VerifyController extends GetxController {
       final currentUser = Influencer.fromJson(storage.readData("currentUser"));
       var response = await AuthApi.resendotp(currentUser.email);
       AFullScreenLoader.stopLoading();
-      Get.snackbar('Great!', response['message']);
+      ASnackBar().successSackBar(title: "Sent!", message: response['message']);
     } catch (e) {
-      Get.snackbar('Oh Snap!', e.toString());
-    } finally {
       AFullScreenLoader.stopLoading();
+      ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
     }
   }
 
@@ -75,14 +75,17 @@ class VerifyController extends GetxController {
       // stop loading
       AFullScreenLoader.stopLoading();
       // redirect
-      AuthenticationRepository.instance.screenRedirect();
+      // AuthenticationRepository.instance.screenRedirect();
+      ASnackBar().successSackBar(
+          title: "Great!", message: "Task Created Successfully");
+      Get.to(() => SuccessSCreen(
+          text: "Your Account Verified Successfully.",
+          animation: AAssets.successAnimation));
     } catch (e) {
       // handle error
+      AFullScreenLoader.stopLoading();
       ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
       print(e.toString());
-    } finally {
-      // remove loader
-      AFullScreenLoader.stopLoading();
     }
   }
 }

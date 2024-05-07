@@ -27,15 +27,18 @@ class SignInController extends GetxController {
           AText.processInfo, AAssets.docerAnimation);
       // check inetrnet connection
       final isConnected = await NetworkManager.instance.isConnected();
-      if (!isConnected) return;
+      if (!isConnected) throw "";
+      ;
       // from validation
-      if (!signInFromKey.currentState!.validate()) return;
+      if (!signInFromKey.currentState!.validate())
+        throw "Fill all required fields";
 
       // Login user through API
       SignIn data =
           SignIn(email: email.text.trim(), password: password.text.trim());
       var response = await AuthApi.signIn(data);
       var user = response['data']['user'];
+      print(user);
       // save auth user data in localStorage
       var storage = ALocalStorage();
       await storage.removeData("currentUser");
@@ -50,11 +53,9 @@ class SignInController extends GetxController {
       await AuthenticationRepository.instance.screenRedirect();
     } catch (e) {
       // handle error
-      ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
-      print(e.toString());
-    } finally {
-      // remove loader
       AFullScreenLoader.stopLoading();
+      ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
+      // print(e.toString());
     }
   }
 }

@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ASnackBar extends GetxController {
-  final opacity = 0.2;
-  defaultSackBar({required title, message = '', duration = 5}) {
+  final opacity = 0.3;
+  defaultSackBar(
+      {required title, message = '', duration = 5, position = "bottom"}) {
     Get.snackbar(
       title,
       message,
       isDismissible: true,
       shouldIconPulse: true,
-      snackPosition: SnackPosition.BOTTOM,
+      snackPosition:
+          position == "bottom" ? SnackPosition.BOTTOM : SnackPosition.TOP,
       duration: Duration(seconds: duration),
       margin: const EdgeInsets.all(10),
       icon: Icon(
@@ -19,14 +21,16 @@ class ASnackBar extends GetxController {
     );
   }
 
-  successSackBar({required title, message = '', duration = 5}) {
+  successSackBar(
+      {required title, message = '', duration = 5, position = "bottom"}) {
     Get.snackbar(
       title,
       message,
       barBlur: 0.7,
       isDismissible: true,
       shouldIconPulse: true,
-      snackPosition: SnackPosition.BOTTOM,
+      snackPosition:
+          position == "bottom" ? SnackPosition.BOTTOM : SnackPosition.TOP,
       duration: Duration(seconds: duration),
       colorText: AColor.darkSuccess,
       backgroundColor: AColor.darkSuccess.withOpacity(0.3),
@@ -38,14 +42,16 @@ class ASnackBar extends GetxController {
     );
   }
 
-  warningSackBar({required title, message = '', duration = 5}) {
+  warningSackBar(
+      {required title, message = '', duration = 5, position = "bottom"}) {
     Get.snackbar(
       title,
       message,
       barBlur: 0.7,
       isDismissible: true,
       shouldIconPulse: true,
-      snackPosition: SnackPosition.BOTTOM,
+      snackPosition:
+          position == "bottom" ? SnackPosition.BOTTOM : SnackPosition.TOP,
       duration: Duration(seconds: duration),
       colorText: AColor.warning,
       backgroundColor: AColor.warning.withOpacity(opacity),
@@ -57,14 +63,16 @@ class ASnackBar extends GetxController {
     );
   }
 
-  dangerSackBar({required title, message = '', duration = 5}) {
+  dangerSackBar(
+      {required title, message = '', duration = 5, position = "bottom"}) {
     Get.snackbar(
       title,
       message,
       barBlur: 0.7,
       isDismissible: true,
       shouldIconPulse: true,
-      snackPosition: SnackPosition.BOTTOM,
+      snackPosition:
+          position == "bottom" ? SnackPosition.BOTTOM : SnackPosition.TOP,
       duration: Duration(seconds: duration),
       colorText: AColor.danger,
       backgroundColor: AColor.danger.withOpacity(opacity),

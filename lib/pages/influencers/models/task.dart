@@ -4,6 +4,9 @@
 
 import 'dart:convert';
 
+import 'package:enfluwence/utills/helpers/helper_functions.dart';
+import 'package:get/get.dart';
+
 Task taskFromJson(String str) => Task.fromJson(json.decode(str));
 
 String taskToJson(Task data) => json.encode(data.toJson());
@@ -20,7 +23,6 @@ class Task {
       taskType: "",
       totalNumberOfEngagements: 0,
       costPerEngagement: 0,
-      captions: null,
     );
   }
 
@@ -117,11 +119,13 @@ class Caption {
 }
 
 class Question {
+  int? index;
   String question;
   String answerType;
   List<Choice>? choices;
 
   Question({
+    this.index,
     required this.question,
     required this.answerType,
     this.choices,
@@ -139,6 +143,7 @@ class Question {
       );
 
   factory Question.fromJson(Map<String, dynamic> json) => Question(
+        index: json["index"],
         question: json["question"],
         answerType: json["answerType"],
         choices: json["choices"] == null
@@ -148,18 +153,29 @@ class Question {
       );
 
   Map<String, dynamic> toJson() => {
+        "index": index,
         "question": question,
         "answerType": answerType,
         "choices": choices == null
             ? []
             : List<dynamic>.from(choices!.map((x) => x.toJson())),
       };
+
+  static Question emptyQuestion() {
+    return Question(
+        index: AHelperFunctions.getRondomNums(),
+        question: "",
+        answerType: "",
+        choices: <Choice>[Choice(text: ""), Choice(text: "")].obs);
+  }
 }
 
 class Choice {
+  int? index;
   String text;
 
   Choice({
+    this.index,
     required this.text,
   });
 
