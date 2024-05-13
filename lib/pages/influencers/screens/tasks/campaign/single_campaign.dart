@@ -13,12 +13,12 @@ import 'package:get/get.dart';
 
 class SingleCampaign extends StatelessWidget {
   const SingleCampaign({super.key, this.campaign, this.showIcon = true});
-  final dynamic campaign;
+  final campaign;
   final bool showIcon;
   @override
   Widget build(BuildContext context) {
-    final String name = Tasks.getTaskName(campaign['type_id']);
-    final bool isComplete = campaign['is_completed'];
+    final String name = campaign.type.name;
+    final bool isComplete = campaign.isCompleted;
     return ACard(
       onTap: () {
         Get.to(CampaignDetails(
@@ -45,10 +45,7 @@ class SingleCampaign extends StatelessWidget {
               const SizedBox(
                 width: ASizes.sm,
               ),
-              TitleP(
-                  title: name,
-                  paragraph:
-                      AHelperFunctions.fomartDate(campaign['created_at']))
+              TitleP(title: name, paragraph: campaign.createdAt.toString())
             ],
           ),
           ABadge(

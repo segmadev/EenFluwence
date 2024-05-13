@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:enfluwence/pages/general/general_user.dart';
 import 'package:enfluwence/utills/consts/api_url.dart';
+import 'package:enfluwence/utills/consts/config.dart';
 import 'package:enfluwence/utills/helpers/api_helper.dart';
 import 'package:enfluwence/utills/local_storage/storage_utility.dart';
 import 'package:http/http.dart' as http;
@@ -8,6 +9,7 @@ import 'package:http/http.dart' as http;
 class InfluencerApi {
   final isInfluncer = GeneralUserController.isInfluencer();
   final token = ALocalStorage().readData("token") ?? null;
+  final noOfFecth = AConfig.noOfFetch.toString();
   Future<dynamic> task_add_money_spent() async {
     if (token == null) return null;
     final headers = {
@@ -54,6 +56,27 @@ class InfluencerApi {
     try {
       final data = ApiHelper.processResponse(response);
       return data;
+    } catch (e) {
+      // print(e);
+      throw e;
+    }
+  }
+
+  Future<dynamic> get_task_list({int page = 1}) async {
+    final token = ALocalStorage().readData("token") ?? null;
+    if (token == null) return null;
+    final headers = {
+      'token': 'Bearer $token',
+    };
+    var pathUrl = ApiUrl.base_url +
+        ApiUrl.influencer_task_list +
+        "?page=$page&params=$noOfFecth";
+    final url = Uri.parse(pathUrl);
+    final response = await http.get(url, headers: headers);
+    // print(response.body);
+    try {
+      final data = ApiHelper.processResponse(response);
+      return data["data"];
     } catch (e) {
       // print(e);
       throw e;

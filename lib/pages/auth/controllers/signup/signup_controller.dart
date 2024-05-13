@@ -44,7 +44,7 @@ class SignUpController extends GetxController {
           password: password.text.trim());
       // var data  = SignUp(email: email.text.trim(), username:  username.text.trim(), password: password.text.trim());
       var response = await AuthApi.signUp(data);
-      var user = Influencer.fromJson(response['data']['user']);
+      var user = User.fromJson(response['data']['user']);
       // save auth user data in localStorage
       var storage = ALocalStorage();
       await storage.saveData("currentUser", user);

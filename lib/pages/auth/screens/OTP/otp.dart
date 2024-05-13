@@ -45,7 +45,7 @@ class OTPScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    Influencer.user.email ?? "",
+                    User.user.email ?? "",
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!

@@ -18,6 +18,8 @@ class ApiUrl {
   static String recent_spending_influencer_url =
       "/wallet/get-influencer-recent-spending";
 
+  static String influencer_task_list = "/task/get-influencer-tasks";
+
   // task
   static String get_tasks = "/task/get-tasks";
   static String create_task = "/task/create-task";

@@ -50,7 +50,7 @@ class WalletScreen extends StatelessWidget {
                   )
                 : TransactionsList(
                     heading: "Transactions",
-                    transList: influncerController.recentSpending!.value,
+                    transList: influncerController.spending!.value,
                   )),
           ],
         )),

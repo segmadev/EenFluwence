@@ -26,7 +26,7 @@ class AuthenticationRepository extends GetxController {
           ? Get.offAll(const AuthScreen())
           : Get.offAll(const APagePreview());
     }
-    final user = Influencer.fromJson(deviceStorage.readData("currentUser"));
+    final user = User.fromJson(deviceStorage.readData("currentUser"));
     if (!user.isVerified) {
       Get.offAll(const OTPScreen());
     } else {

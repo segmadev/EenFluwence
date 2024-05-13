@@ -33,7 +33,7 @@ class VerifyController extends GetxController {
         Get.snackbar('Oh Snap!', "Error validating you.");
         return;
       }
-      final currentUser = Influencer.fromJson(storage.readData("currentUser"));
+      final currentUser = User.fromJson(storage.readData("currentUser"));
       var response = await AuthApi.resendotp(currentUser.email);
       AFullScreenLoader.stopLoading();
       ASnackBar().successSackBar(title: "Sent!", message: response['message']);
@@ -61,7 +61,7 @@ class VerifyController extends GetxController {
             .dangerSackBar(title: "Oh Snap!", message: "Error validating you");
         return;
       }
-      final currentUser = Influencer.fromJson(storage.readData("currentUser"));
+      final currentUser = User.fromJson(storage.readData("currentUser"));
       // Verify user through API
       VerifyEmail data =
           VerifyEmail(email: currentUser.email, code: otp.text.trim());

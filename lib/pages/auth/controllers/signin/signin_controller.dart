@@ -38,7 +38,6 @@ class SignInController extends GetxController {
           SignIn(email: email.text.trim(), password: password.text.trim());
       var response = await AuthApi.signIn(data);
       var user = response['data']['user'];
-      print(user);
       // save auth user data in localStorage
       var storage = ALocalStorage();
       await storage.removeData("currentUser");

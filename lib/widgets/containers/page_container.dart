@@ -13,8 +13,15 @@ class PageContainer extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: ASizes.defaultSpace),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: children,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: children,
+              ),
+              SizedBox(
+                height: ASizes.defaultSpace,
+              )
+            ],
           ),
         ),
       ),

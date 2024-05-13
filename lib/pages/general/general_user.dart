@@ -12,6 +12,7 @@ class GeneralUserController extends GetxController {
   void onInit() {
     super.onInit();
     getUserBalance();
+    
   }
 
   static bool isInfluencer() {

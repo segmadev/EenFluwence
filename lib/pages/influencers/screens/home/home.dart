@@ -1,12 +1,14 @@
 import 'package:enfluwence/pages/auth/controllers/homes/home_page_controller.dart';
 import 'package:enfluwence/pages/auth/controllers/influencer/influencer_controller.dart';
 import 'package:enfluwence/pages/influencers/models/tasks_list.dart';
+import 'package:enfluwence/pages/influencers/screens/tasks/campaign/all_campaigns.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/campaign/campaign_list.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/task_button.dart';
 import 'package:enfluwence/pages/influencers/screens/home/home_header.dart';
 import 'package:enfluwence/pages/influencers/screens/home/totals.dart';
 import 'package:enfluwence/pages/influencers/screens/wallet/fund_account_botton.dart';
 import 'package:enfluwence/pages/transactions/screens/transactions_list.dart';
+import 'package:enfluwence/utills/consts/config.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/widgets/containers/card.dart';
 import 'package:enfluwence/widgets/containers/page_container.dart';
@@ -38,19 +40,23 @@ class HomeScreen extends StatelessWidget {
                   )
                 : TransactionsList(
                     heading: "Recent Spending",
-                    transList: influncerController.recentSpending!.value,
+                    transList: influncerController.spending!.value,
                   )),
           ]),
         ),
         const Totals(),
-        const SectionHeader(
+        SectionHeader(
           title: "Campaign Tasks",
           textButton: "View all",
+          textAction: () {
+            Get.to(AllCampaings());
+          },
         ),
-        CampaignList(
-          list: recentCampaign,
-          title: "Recent Campaigns,",
-        ),
+        Obx(() => CampaignList(
+              list: influncerController.taskLists.value,
+              limit: 5,
+              title: "Recent Campaigns,",
+            )),
       ],
     );
   }
