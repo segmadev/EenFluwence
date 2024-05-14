@@ -1,5 +1,6 @@
 import 'package:enfluwence/pages/auth/controllers/preview/preview_controller.dart';
 import 'package:enfluwence/pages/auth/screens/preview/preview_list.dart';
+import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/utills/helpers/helper_functions.dart';
@@ -22,37 +23,42 @@ class _APagePreviewState extends State<APagePreview> {
   @override
   Widget build(BuildContext context) {
     final cLogo = AHelperFunctions.getLogoUrl(context);
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Stack(
-        children: <Widget>[
-          PageView(
-            controller: _controller.pageController,
-            onPageChanged: _controller.onPageChanged,
-            children: splashList.map((splash) {
-              return SinglePage(
-                imageUrl: cLogo,
-                title: splash['title'] ?? "",
-                description: splash['description'] ?? "",
-              );
-            }).toList(),
-          ),
-          // skip btn
-          Positioned(
-              top: kToolbarHeight,
-              right: ASizes.defaultSpace,
-              child: TextButton(
-                onPressed: () {
-                  _controller.skipToLastPage();
-                },
-                child: Text(
-                  AText.skip,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-              )),
+    return Container(
+      color: AHelperFunctions.isDarkMode(context)
+          ? AColor.dbackground
+          : AColor.lbackground,
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Stack(
+          children: <Widget>[
+            PageView(
+              controller: _controller.pageController,
+              onPageChanged: _controller.onPageChanged,
+              children: splashList.map((splash) {
+                return SinglePage(
+                  imageUrl: cLogo,
+                  title: splash['title'] ?? "",
+                  description: splash['description'] ?? "",
+                );
+              }).toList(),
+            ),
+            // skip btn
+            Positioned(
+                top: kToolbarHeight,
+                right: ASizes.defaultSpace,
+                child: TextButton(
+                  onPressed: () {
+                    _controller.skipToLastPage();
+                  },
+                  child: Text(
+                    AText.skip,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                )),
 
-          ASoomthPageIndicator(count: splashList.length),
-        ],
+            ASoomthPageIndicator(count: splashList.length),
+          ],
+        ),
       ),
     );
   }

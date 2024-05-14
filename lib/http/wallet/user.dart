@@ -38,15 +38,17 @@ class UserApi {
     };
     var pathUrl = ApiUrl.base_url + ApiUrl.get_user;
     final url = Uri.parse(pathUrl);
-    final response = await http.post(url, headers: headers);
+    final response = await http.get(url, headers: headers);
+    print(response.body);
     if (response.statusCode != 201 &&
         response.statusCode != 200 &&
         response.statusCode != 400) {
       throw 'Failed to load data';
     }
+
     try {
       final data = ApiHelper.processResponse(response);
-      return data['data'];
+      return data['data']['user'];
     } catch (e) {
       // print(e);
       throw e;

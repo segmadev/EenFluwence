@@ -43,14 +43,16 @@ class GeneralUserController extends GetxController {
     return currentUser['isInfluencer'];
   }
 
-  get_user() async {
+  Future<bool> get_user() async {
     try {
       var data = await UserApi().get_user();
       storage.saveData("currentUser", data);
       user.value = User.user;
+      return true;
     } catch (e) {
       ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
     }
+    return false;
   }
 
   Future<void> getUserBalance() async {

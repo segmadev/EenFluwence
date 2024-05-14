@@ -26,8 +26,9 @@ class ALocalStorage {
   }
 
   // Generic method to remove data
-  Future<void> removeData(String key) async {
+  Future<bool> removeData(String key) async {
     await _storage.remove(key);
+    return true;
   }
 
   // Clear all data in storage
