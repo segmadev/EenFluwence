@@ -88,26 +88,26 @@ class AValidator {
     }
 
     // Regular expression for phone number validation (assuming a 10-digit US phone number format)
-    final phoneRegExp = RegExp(r'^\d{10}$');
+    final phoneRegExp = RegExp(r'^\d{9|10}$');
 
-    if (!phoneRegExp.hasMatch(value)) {
-      return 'Invalid phone number format (10 digits required).';
-    }
+    // if (!phoneRegExp.hasMatch(value)) {
+    //   return 'Invalid phone number format (9 to 10 digits required).';
+    // }
 
     return null;
   }
 
-  static String? validateUrl(String? value) {
+  static String? validateUrl(String? value, {String name = "url"}) {
+    name = name == "url" ? name : "$name link";
     if (value == null || value.length < 6) {
-      return 'Url is required.';
+      return '$name is required.';
     }
 
     String pattern =
         r'(http|https)://[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?';
     RegExp regExp = new RegExp(pattern);
-
     if (!regExp.hasMatch(value!)) {
-      return 'Please enter valid url';
+      return 'Please enter valid $name';
     }
     return null;
 

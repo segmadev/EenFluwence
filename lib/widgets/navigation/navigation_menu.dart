@@ -32,7 +32,7 @@ class NavigationMenu extends StatelessWidget {
           onTap: () {
             Get.to(ProfilePage());
           },
-          child: Text(User.user.username ?? "Undfined",
+          child: Text(generalUserController.user.value.username ?? "Undfined",
               style: TextStyle(color: AColor.appBarText)),
         ),
         actions: [

@@ -7,6 +7,7 @@ class ApiUrl {
   static String verify_email_url = "/auth/verify-influencer";
   static String resend_otp_code = "/auth/resend-otp";
   static String get_user = "/user/get-user";
+  static String update_user = "/user/update-user";
 
   // influncer
   static String get_influencer = "/user/get-influencer";

@@ -36,6 +36,7 @@ class AText {
   static const String done = "Done";
   static const String next = "Next";
 
+  static const String name = "Full Name";
   static const String firstName = "First Name";
   static const String lastName = "Last Name";
   static const String email = "E-Mail";
