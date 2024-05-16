@@ -32,12 +32,12 @@ class ASnackBar extends GetxController {
       snackPosition:
           position == "bottom" ? SnackPosition.BOTTOM : SnackPosition.TOP,
       duration: Duration(seconds: duration),
-      colorText: AColor.darkSuccess,
-      backgroundColor: AColor.darkSuccess.withOpacity(0.3),
+      colorText: AColor.white,
+      backgroundColor: AColor.darkSuccess,
       margin: const EdgeInsets.all(20),
       icon: Icon(
         Icons.check,
-        color: AColor.darkSuccess,
+        color: AColor.white,
       ),
     );
   }
@@ -53,12 +53,12 @@ class ASnackBar extends GetxController {
       snackPosition:
           position == "bottom" ? SnackPosition.BOTTOM : SnackPosition.TOP,
       duration: Duration(seconds: duration),
-      colorText: AColor.warning,
-      backgroundColor: AColor.warning.withOpacity(opacity),
+      colorText: AColor.white,
+      backgroundColor: AColor.warning,
       margin: const EdgeInsets.all(10),
       icon: Icon(
         Icons.warning,
-        color: AColor.warning,
+        color: AColor.white,
       ),
     );
   }
@@ -74,12 +74,12 @@ class ASnackBar extends GetxController {
       snackPosition:
           position == "bottom" ? SnackPosition.BOTTOM : SnackPosition.TOP,
       duration: Duration(seconds: duration),
-      colorText: AColor.danger,
+      colorText: AColor.white,
       backgroundColor: AColor.danger.withOpacity(opacity),
       margin: const EdgeInsets.all(20),
       icon: Icon(
         Icons.warning,
-        color: AColor.danger,
+        color: AColor.white,
       ),
     );
   }
