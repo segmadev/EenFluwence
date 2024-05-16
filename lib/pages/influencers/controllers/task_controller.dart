@@ -113,6 +113,22 @@ class TaskController extends GetxController {
       // AFullScreenLoader.openLoadingDialog(
       //     AText.processInfo, AAssets.docerAnimation);
       if (!taskFromKey.currentState!.validate()) return;
+      if (int.parse(totalNumberOfEngagements.text) < 1) {
+        ASnackBar().warningSackBar(
+            title: "Error",
+            duration: 4,
+            message: "Please enter the total number of engagements",
+            position: "top");
+        return;
+      }
+      if (int.parse(costPerEngagement.text) < 1) {
+        ASnackBar().warningSackBar(
+            title: "Error",
+            duration: 4,
+            message: "Please enter cost per engagements",
+            position: "top");
+        return;
+      }
       taskData.value.taskType = taskType;
       taskData.value.totalNumberOfEngagements =
           int.parse(totalNumberOfEngagements.text);
