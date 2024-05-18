@@ -1,4 +1,4 @@
-import 'package:enfluwence/pages/influencers/models/user.dart';
+import 'package:enfluwence/pages/general/models/user.dart';
 import 'package:enfluwence/utills/consts/asset_paths.dart';
 import 'package:flutter/material.dart';
 

@@ -1,10 +1,13 @@
 import 'package:enfluwence/data/repositories/authentication/authentication_repository.dart';
 import 'package:enfluwence/pages/auth/screens/auth.dart';
-import 'package:enfluwence/pages/influencers/models/user.dart';
-import 'package:enfluwence/pages/influencers/screens/profile/profile.dart';
+import 'package:enfluwence/pages/general/models/user.dart';
+import 'package:enfluwence/pages/general/screens/profile/profile.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/campaign/campaign_page.dart';
 import 'package:enfluwence/pages/influencers/screens/home/home.dart';
 import 'package:enfluwence/pages/influencers/screens/wallet/wallet_page.dart';
+import 'package:enfluwence/pages/user/screens/home/user_home.dart';
+import 'package:enfluwence/pages/user/screens/task/user_task.dart';
+import 'package:enfluwence/pages/user/screens/wallet/user_wallet.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/text.dart';
@@ -21,6 +24,17 @@ class ANavigationList {
       "screen": CampaignScreen()
     },
     {"label": AText.wallet, "icon": AIcons.wallet, "screen": WalletScreen()},
+    {
+      "label": AText.more,
+      "icon": AIcons.widget,
+      "screen": MoreNavigationMenu()
+    },
+  ];
+
+  static List<dynamic> userNavigationList = [
+    {"label": AText.home, "icon": AIcons.home, "screen": UHomeScreen()},
+    {"label": AText.tasks, "icon": AIcons.tasks, "screen": UTaskScreen()},
+    {"label": AText.wallet, "icon": AIcons.wallet, "screen": UWalletScreen()},
     {
       "label": AText.more,
       "icon": AIcons.widget,

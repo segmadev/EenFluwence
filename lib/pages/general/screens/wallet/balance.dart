@@ -1,5 +1,5 @@
-import 'package:enfluwence/pages/general/general_user.dart';
-import 'package:enfluwence/pages/influencers/models/user.dart';
+import 'package:enfluwence/pages/general/controllers/general_user.dart';
+import 'package:enfluwence/pages/general/models/user.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';

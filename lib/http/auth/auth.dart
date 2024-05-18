@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:enfluwence/pages/auth/models/siginin.dart';
 import 'package:enfluwence/pages/auth/models/signup.dart';
 import 'package:enfluwence/pages/auth/models/verify.dart';
-import 'package:enfluwence/pages/influencers/models/user.dart';
+import 'package:enfluwence/pages/general/models/user.dart';
 import 'package:enfluwence/utills/consts/api_url.dart';
 import 'package:enfluwence/utills/helpers/api_helper.dart';
 import 'package:http/http.dart' as http;

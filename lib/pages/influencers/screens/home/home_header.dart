@@ -1,4 +1,4 @@
-import 'package:enfluwence/pages/influencers/screens/wallet/balance.dart';
+import 'package:enfluwence/pages/general/screens/wallet/balance.dart';
 import 'package:enfluwence/utills/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';

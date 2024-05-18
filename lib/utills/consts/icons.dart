@@ -4,6 +4,7 @@ class AIcons {
   // bottom bar Icons
   static const IconData home = Icons.home_outlined;
   static const IconData campaigns = Icons.layers_outlined;
+  static const IconData tasks = Icons.task_alt_outlined;
   static const IconData wallet = Icons.wallet_outlined;
   static const IconData widget = Icons.widgets_outlined;
   static const IconData reload = Icons.refresh_outlined;

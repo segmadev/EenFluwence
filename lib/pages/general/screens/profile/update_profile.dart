@@ -1,6 +1,6 @@
-import 'package:enfluwence/pages/general/general_user.dart';
-import 'package:enfluwence/pages/influencers/screens/profile/profile.dart';
-import 'package:enfluwence/pages/influencers/screens/profile/profile_form.dart';
+import 'package:enfluwence/pages/general/controllers/general_user.dart';
+import 'package:enfluwence/pages/general/screens/profile/profile.dart';
+import 'package:enfluwence/pages/general/screens/profile/profile_form.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/widgets/containers/card.dart';
 import 'package:enfluwence/widgets/containers/page_container.dart';

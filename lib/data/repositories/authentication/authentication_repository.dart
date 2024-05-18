@@ -1,9 +1,9 @@
 import 'package:enfluwence/pages/auth/screens/OTP/otp.dart';
 import 'package:enfluwence/pages/auth/screens/auth.dart';
 import 'package:enfluwence/pages/auth/screens/preview/page_preview.dart';
-import 'package:enfluwence/pages/general/general_user.dart';
-import 'package:enfluwence/pages/influencers/models/user.dart';
-import 'package:enfluwence/pages/influencers/screens/profile/update_profile.dart';
+import 'package:enfluwence/pages/general/controllers/general_user.dart';
+import 'package:enfluwence/pages/general/models/user.dart';
+import 'package:enfluwence/pages/general/screens/profile/update_profile.dart';
 import 'package:enfluwence/utills/local_storage/storage_utility.dart';
 import 'package:enfluwence/utills/popups/snack_bar_pop.dart';
 import 'package:enfluwence/widgets/navigation/navigation_menu.dart';

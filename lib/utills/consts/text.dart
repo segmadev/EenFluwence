@@ -2,6 +2,7 @@ class AText {
   // navigation
   static const String home = "Home";
   static const String campaigns = "Campaigns";
+  static const String tasks = "Tasks";
   static const String wallet = "Wallet";
   static const String more = "More";
   // more navigation list

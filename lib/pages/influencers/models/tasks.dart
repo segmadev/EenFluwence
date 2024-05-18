@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:enfluwence/pages/influencers/models/user.dart';
+import 'package:enfluwence/pages/general/models/user.dart';
 
 class TasksList {
   int engagements;

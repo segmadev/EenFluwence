@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:enfluwence/pages/general/general_user.dart';
-import 'package:enfluwence/pages/influencers/models/user.dart';
+import 'package:enfluwence/pages/general/controllers/general_user.dart';
+import 'package:enfluwence/pages/general/models/user.dart';
 import 'package:enfluwence/utills/consts/api_url.dart';
 import 'package:enfluwence/utills/helpers/api_helper.dart';
 import 'package:enfluwence/utills/local_storage/storage_utility.dart';

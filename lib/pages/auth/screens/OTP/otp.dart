@@ -2,7 +2,7 @@ import 'package:enfluwence/data/repositories/authentication/authentication_repos
 import 'package:enfluwence/pages/auth/controllers/verify/verify_controller.dart';
 import 'package:enfluwence/pages/auth/screens/auth.dart';
 import 'package:enfluwence/pages/auth/screens/success/success.dart';
-import 'package:enfluwence/pages/influencers/models/user.dart';
+import 'package:enfluwence/pages/general/models/user.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';

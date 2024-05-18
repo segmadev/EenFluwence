@@ -1,6 +1,6 @@
-import 'package:enfluwence/pages/general/general_user.dart';
-import 'package:enfluwence/pages/influencers/models/user.dart';
-import 'package:enfluwence/pages/influencers/screens/profile/profile.dart';
+import 'package:enfluwence/pages/general/controllers/general_user.dart';
+import 'package:enfluwence/pages/general/models/user.dart';
+import 'package:enfluwence/pages/general/screens/profile/profile.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';
@@ -21,7 +21,9 @@ class NavigationMenu extends StatelessWidget {
             ? Get.find()
             : Get.put(GeneralUserController());
     final controller = Get.put(NavigationController());
-    final navigationList = ANavigationList.navigationList;
+    final navigationList = User.user.isInfluencer
+        ? ANavigationList.navigationList
+        : ANavigationList.userNavigationList;
     return Scaffold(
       appBar: AAppBar(
         showBackArrow: false,

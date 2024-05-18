@@ -1,5 +1,5 @@
 import 'package:enfluwence/pages/auth/controllers/influencer/influencer_controller.dart';
-import 'package:enfluwence/pages/influencers/screens/wallet/balance.dart';
+import 'package:enfluwence/pages/general/screens/wallet/balance.dart';
 import 'package:enfluwence/pages/influencers/screens/wallet/fund_account_botton.dart';
 import 'package:enfluwence/pages/transactions/screens/account/linked_account.dart';
 import 'package:enfluwence/pages/transactions/screens/transactions_list.dart';

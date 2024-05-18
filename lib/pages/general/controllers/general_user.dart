@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:enfluwence/data/repositories/authentication/authentication_repository.dart';
 import 'package:enfluwence/http/wallet/user.dart';
-import 'package:enfluwence/pages/influencers/models/user.dart';
-import 'package:enfluwence/pages/influencers/screens/profile/update_profile.dart';
+import 'package:enfluwence/pages/general/models/user.dart';
+import 'package:enfluwence/pages/general/screens/profile/update_profile.dart';
 import 'package:enfluwence/utills/consts/asset_paths.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/utills/helpers/network_manager.dart';

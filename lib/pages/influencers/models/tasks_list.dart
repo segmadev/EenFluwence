@@ -1,6 +1,4 @@
-import 'package:enfluwence/pages/influencers/models/user.dart';
-
-class Tasks extends User {
+class Tasks  {
   static List getCampaign() {
     var taskList = [
       {

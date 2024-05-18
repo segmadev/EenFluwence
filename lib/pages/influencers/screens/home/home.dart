@@ -1,6 +1,6 @@
 import 'package:enfluwence/pages/auth/controllers/homes/home_page_controller.dart';
 import 'package:enfluwence/pages/auth/controllers/influencer/influencer_controller.dart';
-import 'package:enfluwence/pages/general/general_user.dart';
+import 'package:enfluwence/pages/general/controllers/general_user.dart';
 import 'package:enfluwence/pages/influencers/models/tasks_list.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/campaign/all_campaigns.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/campaign/campaign_list.dart';
