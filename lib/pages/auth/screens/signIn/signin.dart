@@ -19,70 +19,68 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignInController());
-    return Scaffold(
-      body: Form(
-        key: controller.signInFromKey,
-        child: Column(
-          children: [
-            // Email
-            TextFormField(
-              controller: controller.email,
-              validator: (value) => AValidator.validateEmail(value),
-              decoration: const InputDecoration(
-                labelText: AText.email,
+    return Form(
+      key: controller.signInFromKey,
+      child: Column(
+        children: [
+          // Email
+          TextFormField(
+            controller: controller.email,
+            validator: (value) => AValidator.validateEmail(value),
+            decoration: const InputDecoration(
+              labelText: AText.email,
+            ),
+          ),
+          const SizedBox(height: ASizes.spaceBtwInputFields),
+          Obx(() => TextFormField(
+                controller: controller.password,
+                obscureText: controller.hidePassword.value,
+                validator: (value) => AValidator.validatePassword(value),
+                decoration: InputDecoration(
+                    labelText: AText.password,
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          controller.hidePassword.value =
+                              !controller.hidePassword.value;
+                        },
+                        icon: controller.hidePassword.value
+                            ? Icon(Iconsax.eye_slash)
+                            : Icon(Iconsax.eye))),
+              )),
+          const SizedBox(height: ASizes.spaceBtwInputFields),
+
+          const SizedBox(height: ASizes.spaceBtwInputFields),
+          Row(
+            children: [
+              // Row(
+              //   children: [
+              //     Checkbox(
+              //       value: true,
+              //       onChanged: (value) {},
+              //     ),
+              //     const Text(AText.rememberMe),
+              //   ],
+              // ),
+
+              /// Forget Password
+              const Spacer(),
+              TextButton(
+                onPressed: () {},
+                child: const Text(AText.forgetPassword),
               ),
-            ),
-            const SizedBox(height: ASizes.spaceBtwInputFields),
-            Obx(() => TextFormField(
-                  controller: controller.password,
-                  obscureText: controller.hidePassword.value,
-                  validator: (value) => AValidator.validatePassword(value),
-                  decoration: InputDecoration(
-                      labelText: AText.password,
-                      suffixIcon: IconButton(
-                          onPressed: () {
-                            controller.hidePassword.value =
-                                !controller.hidePassword.value;
-                          },
-                          icon: controller.hidePassword.value
-                              ? Icon(Iconsax.eye_slash)
-                              : Icon(Iconsax.eye))),
-                )),
-            const SizedBox(height: ASizes.spaceBtwInputFields),
+            ],
+          ),
+          const SizedBox(height: ASizes.spaceBtwInputFields),
 
-            const SizedBox(height: ASizes.spaceBtwInputFields),
-            Row(
-              children: [
-                // Row(
-                //   children: [
-                //     Checkbox(
-                //       value: true,
-                //       onChanged: (value) {},
-                //     ),
-                //     const Text(AText.rememberMe),
-                //   ],
-                // ),
-
-                /// Forget Password
-                const Spacer(),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(AText.forgetPassword),
-                ),
-              ],
-            ),
-            const SizedBox(height: ASizes.spaceBtwInputFields),
-
-            // Sign In Button
-            PrimaryButton(
-              name: AText.signin,
-              onPressed: () {
-                controller.signIn();
-                // Get.to(const NavigationMenu());
-              },
-            ),
-          ],
-        ),
+          // Sign In Button
+          PrimaryButton(
+            name: AText.signin,
+            onPressed: () {
+              controller.signIn();
+              // Get.to(const NavigationMenu());
+            },
+          ),
+        ],
       ),
     );
   }

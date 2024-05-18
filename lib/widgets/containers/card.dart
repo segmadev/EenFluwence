@@ -13,6 +13,7 @@ class ACard extends StatelessWidget {
     this.onTap,
     this.topHeight,
     this.height,
+    this.border,
   });
   final Widget child;
   final double width;
@@ -21,6 +22,7 @@ class ACard extends StatelessWidget {
   final double? padding;
   final dynamic? onTap;
   final double? topHeight;
+  final Border? border;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -30,11 +32,12 @@ class ACard extends StatelessWidget {
           onTap: onTap,
           child: Container(
             width: width,
-            height: height ?? null,
+            height: height,
             decoration: BoxDecoration(
               color: backgroundColor ??
                   AHelperFunctions.getCardBackgroundColor(context),
               borderRadius: BorderRadius.circular(ASizes.borderRadiusLg),
+              border: border,
             ),
             child: Padding(
               padding: EdgeInsets.all(padding ?? ASizes.md),

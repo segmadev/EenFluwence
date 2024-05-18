@@ -9,6 +9,9 @@ class AIcons {
   static const IconData widget = Icons.widgets_outlined;
   static const IconData reload = Icons.refresh_outlined;
 
+  static const IconData money = Icons.money_outlined;
+  static const IconData chart = Icons.bar_chart_outlined;
+
   static const IconData more_vert = Icons.more_vert;
   static const IconData more_horiz = Icons.more_horiz;
 

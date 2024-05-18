@@ -18,13 +18,26 @@ class AText {
 
   static const String createTask = "Create Task";
   static const String campaignTask = "Campaign Tasks";
+  static const String unfinishedTask = "Unfinished Tasks";
+  static const String completedTask = "Tasks Completed";
+  static const String newTasks = "New Tasks";
+  static const String avilableTasks = "Avilable Tasks";
+  static const String activeTasks = "Active Tasks";
+  static const String submitedTasks = "Submitted Tasks";
+  static const String allTasks = "All Tasks";
 
   static const String fundAccount = "Fund Account";
   static const String transactionHeading = "Transactions";
   static const String linkedAccounts = "Linked Accounts";
+  static const String totalEranings = "Total Earnings";
 
+  static const String eranings = "Earnings";
+  static const String expenditure = "Expenditure";
+
+  static const String overview = "Overview";
   static const String skip = "Skip";
   static const String back = "Back";
+  static const String viewAll = "View All";
 
   static const String signup = "Sign Up";
   static const String signin = "Sign In";

@@ -40,4 +40,6 @@ class AColor {
   static const blue = Color(0xff4318FF);
 // gray
   static const gray = Color(0xFF4F4F4F);
+  // boder COolor
+  static const boderColor = Color(0xffA3AED0);
 }

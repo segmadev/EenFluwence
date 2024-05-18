@@ -1,6 +1,8 @@
 import 'package:enfluwence/pages/auth/screens/signIn/signin.dart';
 import 'package:enfluwence/pages/auth/screens/signUp/signup.dart';
+import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/text.dart';
+import 'package:enfluwence/utills/helpers/helper_functions.dart';
 import 'package:enfluwence/widgets/controllers/simple_tabs_controller.dart';
 import 'package:enfluwence/widgets/header/auth_header.dart';
 import 'package:enfluwence/widgets/tabs/simple_tab.dart';
@@ -28,6 +30,8 @@ class _AuthScreenState extends State<AuthScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:
+          !AHelperFunctions.isDarkMode(context) ? AColor.white : null,
       body: SingleChildScrollView(
         child: Column(
           children: [
