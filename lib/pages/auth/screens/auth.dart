@@ -47,7 +47,7 @@ class _AuthScreenState extends State<AuthScreen>
                     ),
                   ),
                   Container(
-                    height: 400,
+                    height: 500,
                     padding: const EdgeInsets.all(20),
                     child:
                         TabBarView(controller: _tabController, children: const [

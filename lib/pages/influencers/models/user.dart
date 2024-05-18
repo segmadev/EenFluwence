@@ -134,6 +134,7 @@ class User {
         "twitter": twitter,
         "whatsapp": whatsapp,
       };
+
   static final user = User.fromJson(storage.readData("currentUser"));
 }
 

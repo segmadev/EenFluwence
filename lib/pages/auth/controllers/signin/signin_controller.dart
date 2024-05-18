@@ -2,6 +2,7 @@ import 'dart:core';
 import 'package:enfluwence/data/repositories/authentication/authentication_repository.dart';
 import 'package:enfluwence/http/auth/auth.dart';
 import 'package:enfluwence/pages/auth/models/siginin.dart';
+import 'package:enfluwence/pages/influencers/models/user.dart';
 import 'package:enfluwence/utills/consts/asset_paths.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/utills/helpers/network_manager.dart';
@@ -18,6 +19,7 @@ class SignInController extends GetxController {
   final hidePassword = true.obs;
   final email = TextEditingController();
   final password = TextEditingController();
+  final signAsUser = true.obs;
   GlobalKey<FormState> signInFromKey = GlobalKey<FormState>();
 
   Future<void> signIn() async {
@@ -32,18 +34,21 @@ class SignInController extends GetxController {
       // from validation
       if (!signInFromKey.currentState!.validate())
         throw "Fill all required fields";
-
       // Login user through API
-      SignIn data =
-          SignIn(email: email.text.trim(), password: password.text.trim());
+      SignIn data = SignIn(
+          email: email.text.trim().toLowerCase(),
+          password: password.text.trim());
       var response = await AuthApi.signIn(data);
       var user = response['data']['user'];
+      AFullScreenLoader.stopLoading();
       // save auth user data in localStorage
       var storage = ALocalStorage();
       await storage.removeData("currentUser");
       await storage.removeData("token");
       await storage.saveData("currentUser", user);
-      await storage.saveData("token", response['data']['token']);
+      if (response['data']['token'] != null) {
+        await storage.saveData("token", response['data']['token']);
+      }
       // show success message
       ASnackBar().successSackBar(title: "Great!", message: response['message']);
       // stop loading
@@ -54,7 +59,19 @@ class SignInController extends GetxController {
       // handle error
       AFullScreenLoader.stopLoading();
       ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
-      // print(e.toString());
     }
   }
 }
+
+
+// var Cuser = User(
+      //         avatar: "",
+      //         email: email.text.trim(),
+      //         id: "",
+      //         isAdmin: false,
+      //         username: "",
+      //         isDeleted: false,
+      //         isInfluencer: false,
+      //         isSuspended: false,
+      //         isVerified: false)
+      //     .toJson();

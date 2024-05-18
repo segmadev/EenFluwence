@@ -11,6 +11,7 @@ import 'package:enfluwence/pages/influencers/screens/wallet/fund_account_botton.
 import 'package:enfluwence/pages/transactions/screens/transactions_list.dart';
 import 'package:enfluwence/utills/consts/config.dart';
 import 'package:enfluwence/utills/consts/size.dart';
+import 'package:enfluwence/utills/popups/small_loading.dart';
 import 'package:enfluwence/widgets/containers/card.dart';
 import 'package:enfluwence/widgets/containers/page_container.dart';
 import 'package:enfluwence/widgets/header/section_header.dart';
@@ -36,9 +37,7 @@ class HomeScreen extends StatelessWidget {
             const FundAccountButton(),
             const SizedBox(height: ASizes.md),
             Obx(() => influncerController.isLoadingRecent.value
-                ? ACard(
-                    child: Center(child: Text("Loading...")),
-                  )
+                ? SmallLoading()
                 : TransactionsList(
                     heading: "Recent Spending",
                     transList: influncerController.spending!.value,

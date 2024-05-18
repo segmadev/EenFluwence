@@ -1,3 +1,4 @@
+import 'package:enfluwence/utills/consts/asset_paths.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/widgets/buttons/primary_button.dart';
@@ -9,14 +10,14 @@ import 'package:lottie/lottie.dart';
 class AAnimationLoaderWidget extends StatelessWidget {
   const AAnimationLoaderWidget(
       {super.key,
-      required this.text,
-      required this.animation,
+      this.text,
+      this.animation = AAssets.docerAnimation,
       this.showAction = false,
       this.actionText,
       this.onActionPressed,
       this.heading});
 
-  final String text;
+  final String? text;
   final String animation;
   final bool showAction;
   final String? actionText;
@@ -41,7 +42,7 @@ class AAnimationLoaderWidget extends StatelessWidget {
             height: ASizes.sm,
           ),
           Text(
-            text,
+            text ?? "",
             style: Theme.of(context).textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),

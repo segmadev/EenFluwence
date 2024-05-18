@@ -39,7 +39,6 @@ class UserApi {
     var pathUrl = ApiUrl.base_url + ApiUrl.get_user;
     final url = Uri.parse(pathUrl);
     final response = await http.get(url, headers: headers);
-    print(response.body);
     if (response.statusCode != 201 &&
         response.statusCode != 200 &&
         response.statusCode != 400) {
@@ -57,16 +56,15 @@ class UserApi {
 
   static Future<dynamic> updateUser(UserUpdate user) async {
     final token = ALocalStorage().readData("token") ?? null;
-    final body = jsonEncode(user.toJson());
+    final body = json.encode(user.toJson());
     if (token == null) return null;
     final headers = {
       'token': 'Bearer $token',
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/json',
     };
     var pathUrl = ApiUrl.base_url + ApiUrl.update_user;
     final url = Uri.parse(pathUrl);
     final response = await http.patch(url, headers: headers, body: body);
-    print(response.statusCode);
     if (response.statusCode != 201 &&
         response.statusCode != 200 &&
         response.statusCode != 400) {

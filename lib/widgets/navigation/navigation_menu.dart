@@ -16,7 +16,10 @@ class NavigationMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final generalUserController = Get.put(GeneralUserController());
+    final GeneralUserController generalUserController =
+        Get.isRegistered<GeneralUserController>()
+            ? Get.find()
+            : Get.put(GeneralUserController());
     final controller = Get.put(NavigationController());
     final navigationList = ANavigationList.navigationList;
     return Scaffold(

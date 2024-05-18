@@ -22,7 +22,12 @@ class SignUpController extends GetxController {
   final email = TextEditingController();
   final username = TextEditingController();
   final password = TextEditingController();
+  final signAsUser = true.obs;
   GlobalKey<FormState> signupFromKey = GlobalKey<FormState>();
+
+  changeSignUpAsValue(isUser) {
+    signAsUser.value = isUser ? true : false;
+  }
 
   Future<void> signup() async {
     try {
@@ -39,24 +44,26 @@ class SignUpController extends GetxController {
 
       // Register user through API
       SignUp data = SignUp(
-          email: email.text.trim(),
-          username: username.text.trim(),
+          email: email.text.trim().toLowerCase(),
+          username: username.text.trim().toLowerCase(),
           password: password.text.trim());
       // var data  = SignUp(email: email.text.trim(), username:  username.text.trim(), password: password.text.trim());
-      var response = await AuthApi.signUp(data);
-      var user = User.fromJson(response['data']['user']);
+      var response = await AuthApi.signUp(data, isUser: signAsUser.value);
+      // var user = User.fromJson(response['data']['user']);
       // save auth user data in localStorage
       var storage = ALocalStorage();
-      await storage.saveData("currentUser", user);
+      await storage.saveData("currentUser", response['data']['user']);
       // show success message
-      ASnackBar().successSackBar(title: "Great!", message: response['message']);
+      ASnackBar().successSackBar(
+          position: "top", title: "Great!", message: response['message']);
       // naviagte to verify page
       // AFullScreenLoader.stopLoading();
       Get.to(() => const OTPScreen());
     } catch (e) {
       // handle error
       AFullScreenLoader.stopLoading();
-      ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
+      ASnackBar().dangerSackBar(
+          position: "top", title: "Oh Snap!", message: e.toString());
     }
   }
 }

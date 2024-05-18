@@ -3,6 +3,7 @@ import 'package:enfluwence/pages/auth/screens/auth.dart';
 import 'package:enfluwence/pages/auth/screens/preview/page_preview.dart';
 import 'package:enfluwence/pages/general/general_user.dart';
 import 'package:enfluwence/pages/influencers/models/user.dart';
+import 'package:enfluwence/pages/influencers/screens/profile/update_profile.dart';
 import 'package:enfluwence/utills/local_storage/storage_utility.dart';
 import 'package:enfluwence/utills/popups/snack_bar_pop.dart';
 import 'package:enfluwence/widgets/navigation/navigation_menu.dart';
@@ -19,18 +20,23 @@ class AuthenticationRepository extends GetxController {
   }
 
   screenRedirect() async {
+    print("Got here: " + deviceStorage.readData("currentUser").toString());
     try {
       if (deviceStorage.readData("currentUser") == null) {
         deviceStorage.saveDataIfNull("IsFirstTime", true);
         deviceStorage.readData('IsFirstTime') != true
             ? Get.offAll(const AuthScreen())
             : Get.offAll(const APagePreview());
-      }
-      final user = User.user;
-      if (!user.isVerified) {
-        Get.offAll(const OTPScreen());
       } else {
-        Get.offAll(const NavigationMenu());
+        final user = User.user;
+        print("Go to profile");
+        if (!user.isVerified) {
+          Get.offAll(const OTPScreen());
+        } else if (user.name == null) {
+          Get.offAll(const UpdateProfile());
+        } else {
+          Get.offAll(const NavigationMenu());
+        }
       }
     } catch (e) {
       // logout();
@@ -39,8 +45,8 @@ class AuthenticationRepository extends GetxController {
 
 // logout
   void logout() async {
-    await deviceStorage.removeData("currentUser");
-    await deviceStorage.removeData("token");
+    await deviceStorage.clearAll();
+    deviceStorage.saveDataIfNull("IsFirstTime", false);
     ASnackBar().dangerSackBar(title: "Logout", message: "Account logout");
     screenRedirect();
   }

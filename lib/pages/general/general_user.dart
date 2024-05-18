@@ -1,5 +1,8 @@
+import 'dart:convert';
+import 'package:enfluwence/data/repositories/authentication/authentication_repository.dart';
 import 'package:enfluwence/http/wallet/user.dart';
 import 'package:enfluwence/pages/influencers/models/user.dart';
+import 'package:enfluwence/pages/influencers/screens/profile/update_profile.dart';
 import 'package:enfluwence/utills/consts/asset_paths.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/utills/helpers/network_manager.dart';
@@ -11,6 +14,7 @@ import 'package:get/get.dart';
 class GeneralUserController extends GetxController {
   static GeneralUserController get instance => Get.find();
   static dynamic currentUser = storage.readData("currentUser");
+  final isLoading = true.obs;
   final user = User.user.obs;
   final userUpdate = UserUpdate.empty().obs;
   static dynamic token = storage.readData("token");
@@ -37,6 +41,7 @@ class GeneralUserController extends GetxController {
     super.onInit();
     getUserBalance();
     get_user();
+    isLoading.value = false;
   }
 
   static bool isInfluencer() {
@@ -48,11 +53,23 @@ class GeneralUserController extends GetxController {
       var data = await UserApi().get_user();
       storage.saveData("currentUser", data);
       user.value = User.user;
+      if (user.value.name != null) {
+        updateTextEditingValue();
+      }
       return true;
     } catch (e) {
       ASnackBar().dangerSackBar(title: "Oh Snap!", message: e.toString());
     }
     return false;
+  }
+
+  updateTextEditingValue() {
+    name.text = user.value.name!;
+    phoneNumber.text = user.value.phoneNumber!;
+    facebook.text = user.value.facebook!;
+    instagram.text = user.value.instagram!;
+    twitter.text = user.value.twitter!;
+    whatsapp.text = user.value.whatsapp!;
   }
 
   Future<void> getUserBalance() async {
@@ -62,7 +79,7 @@ class GeneralUserController extends GetxController {
     } catch (e) {}
   }
 
-  update_profile() async {
+  update_profile({bool isFirstUpdate = false}) async {
     try {
       // start loading
       AFullScreenLoader.openLoadingDialog(
@@ -83,6 +100,10 @@ class GeneralUserController extends GetxController {
       user.value = User.user;
       AFullScreenLoader.stopLoading();
       ASnackBar().successSackBar(title: "Great!", message: response['message']);
+      print(isFirstUpdate);
+      if (isFirstUpdate) {
+        AuthenticationRepository().screenRedirect();
+      }
     } catch (e) {
       AFullScreenLoader.stopLoading();
       ASnackBar().dangerSackBar(title: "OOps!", message: e.toString());

@@ -10,9 +10,11 @@ import 'package:http/http.dart';
 // import 'package:http/http.dart';
 
 class AuthApi {
-  static Future<dynamic> signUp(SignUp data) async {
+  static Future<dynamic> signUp(SignUp data, {bool isUser = true}) async {
     var bodyData = data.toJson();
-    var pathUrl = ApiUrl.base_url + ApiUrl.sign_up_influencer_url;
+    var end_point =
+        isUser ? ApiUrl.sign_up_user_url : ApiUrl.sign_up_influencer_url;
+    var pathUrl = ApiUrl.base_url + end_point;
     final url = Uri.parse(pathUrl); //Repclace Your Endpoint
     final headers = {'Content-Type': 'application/json'};
     final body = jsonEncode(bodyData);

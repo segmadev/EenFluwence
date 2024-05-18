@@ -12,9 +12,11 @@ class ACard extends StatelessWidget {
     this.padding,
     this.onTap,
     this.topHeight,
+    this.height,
   });
   final Widget child;
   final double width;
+  final double? height;
   final Color? backgroundColor;
   final double? padding;
   final dynamic? onTap;
@@ -28,6 +30,7 @@ class ACard extends StatelessWidget {
           onTap: onTap,
           child: Container(
             width: width,
+            height: height ?? null,
             decoration: BoxDecoration(
               color: backgroundColor ??
                   AHelperFunctions.getCardBackgroundColor(context),

@@ -1,5 +1,6 @@
 import 'package:enfluwence/data/repositories/authentication/authentication_repository.dart';
 import 'package:enfluwence/pages/auth/screens/auth.dart';
+import 'package:enfluwence/pages/influencers/models/user.dart';
 import 'package:enfluwence/pages/influencers/screens/profile/profile.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/campaign/campaign_page.dart';
 import 'package:enfluwence/pages/influencers/screens/home/home.dart';
