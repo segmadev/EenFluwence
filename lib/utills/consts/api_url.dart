@@ -19,10 +19,11 @@ class ApiUrl {
       "/task/get-influencer-tasks-and-money-spent";
   static String recent_spending_influencer_url =
       "/wallet/get-influencer-recent-spending";
-
   static String influencer_task_list = "/task/get-influencer-tasks";
 
   // task
   static String get_tasks = "/task/get-tasks";
+  static String get_task = "/task/get-task";
   static String create_task = "/task/create-task";
+  static String get_avilable_task = "/task/get-available-tasks";
 }

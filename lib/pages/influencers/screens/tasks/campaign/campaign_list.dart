@@ -1,6 +1,5 @@
 import 'package:enfluwence/pages/influencers/screens/tasks/campaign/single_campaign.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CampaignList extends StatelessWidget {
   const CampaignList(

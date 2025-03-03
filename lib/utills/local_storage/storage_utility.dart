@@ -54,4 +54,3 @@ class ALocalStorage {
 //
 // // Clear all data
 // localStorage.clearAll();
-

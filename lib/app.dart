@@ -1,5 +1,4 @@
 import 'package:enfluwence/bindings/general_bindings.dart';
-import 'package:enfluwence/pages/auth/screens/preview/page_preview.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/helpers/helper_functions.dart';
 import 'package:enfluwence/utills/theme/theme.dart';

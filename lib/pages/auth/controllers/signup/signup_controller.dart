@@ -1,10 +1,8 @@
-import 'dart:convert';
 import 'dart:core';
 
 import 'package:enfluwence/http/auth/auth.dart';
 import 'package:enfluwence/pages/auth/models/signup.dart';
 import 'package:enfluwence/pages/auth/screens/OTP/otp.dart';
-import 'package:enfluwence/pages/general/models/user.dart';
 import 'package:enfluwence/utills/consts/asset_paths.dart';
 import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/utills/helpers/network_manager.dart';

@@ -17,13 +17,18 @@ class UpdateProfile extends StatelessWidget {
     return const Scaffold(
       body: PageContainer(
         children: [
-          ACard(
-            child: TitleP(title: "Update Additional Information"),
-          ),
-          // SizedBox(height: ASizes.defaultSpace),
-          ProfileForm(
-            isFirstUpdate: true,
-          ),
+          SizedBox(height: 100),
+          Column(
+            children: [
+              ACard(
+                child: TitleP(title: "Update Additional Information"),
+              ),
+              // SizedBox(height: ASizes.defaultSpace),
+              ProfileForm(
+                isFirstUpdate: true,
+              ),
+            ],
+          )
         ],
       ),
     );

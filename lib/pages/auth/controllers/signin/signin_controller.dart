@@ -30,7 +30,6 @@ class SignInController extends GetxController {
       // check inetrnet connection
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) throw "";
-      ;
       // from validation
       if (!signInFromKey.currentState!.validate())
         throw "Fill all required fields";

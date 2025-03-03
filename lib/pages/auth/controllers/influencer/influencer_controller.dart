@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:enfluwence/data/repositories/authentication/authentication_repository.dart';
 import 'package:enfluwence/http/influencer/influencer_api.dart';
+import 'package:enfluwence/http/task/task_api.dart';
 import 'package:enfluwence/pages/influencers/models/tasks.dart';
 import 'package:enfluwence/pages/transactions/models/transactions.dart';
 import 'package:enfluwence/utills/helpers/network_manager.dart';
@@ -13,6 +14,7 @@ import 'package:get/get.dart';
 class InfluencerController extends GetxController {
   static InfluencerController get instance => Get.find();
   final influencerApi = Get.put(InfluencerApi());
+  final taskApi = Get.put(TaskApi());
   // final taskList = Get.put(TasksList);
   ALocalStorage storage = Get.find();
   final totalMoneySpent = 0.0.obs;
@@ -91,7 +93,7 @@ class InfluencerController extends GetxController {
     final isConnected = await NetworkManager.instance.isConnected();
     if (!isConnected) return;
     try {
-      final data = await influencerApi.get_task_list(page: listNextPage.value);
+      final data = await taskApi.get_task_list(page: listNextPage.value);
       taskLists.addAll(
           TasksList.tasksListFromJson(jsonEncode(data["tasks"]).toString()));
       data['hasNext'] == true ? listNextPage.value++ : listNextPage.value = 0;

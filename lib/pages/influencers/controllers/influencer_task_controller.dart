@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:enfluwence/http/task/task_api.dart';
-import 'package:enfluwence/pages/influencers/models/task.dart';
+import 'package:enfluwence/pages/general/models/task.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/campaign/add_caption.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/other_task/questions/add_questions.dart';
 import 'package:enfluwence/utills/consts/asset_paths.dart';

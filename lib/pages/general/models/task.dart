@@ -135,11 +135,13 @@ class Caption {
 }
 
 class Question {
+  String? id;
   String question;
   String answerType;
   List<Choice>? choices;
 
   Question({
+    this.id,
     required this.question,
     required this.answerType,
     this.choices,

@@ -1,5 +1,5 @@
-import 'package:enfluwence/pages/influencers/controllers/task_controller.dart';
-import 'package:enfluwence/pages/influencers/models/task.dart';
+import 'package:enfluwence/pages/influencers/controllers/influencer_task_controller.dart';
+import 'package:enfluwence/pages/general/models/task.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/icons.dart';
 import 'package:enfluwence/utills/consts/size.dart';

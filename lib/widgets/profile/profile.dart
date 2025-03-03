@@ -8,6 +8,16 @@ class AProfile {
     backgroundColor: Colors.transparent,
   );
 
+  static Widget display_profile({avatar}) {
+    avatar = (avatar != null && avatar != "")
+        ? NetworkImage(avatar)
+        : const AssetImage(AAssets.defaultProfile);
+    return CircleAvatar(
+      backgroundImage: avatar,
+      backgroundColor: Colors.transparent,
+    );
+  }
+
   static dynamic getProfileUrl() {
     if (User.user.avatar != null && User.user.avatar != "") {
       return NetworkImage(User.user.avatar);

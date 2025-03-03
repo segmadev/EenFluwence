@@ -1,4 +1,4 @@
-import 'package:enfluwence/pages/influencers/controllers/task_controller.dart';
+import 'package:enfluwence/pages/influencers/controllers/influencer_task_controller.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/task_audience.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/size.dart';

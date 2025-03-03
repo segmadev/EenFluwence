@@ -40,7 +40,7 @@ class UserCard extends StatelessWidget {
                       children: [
                         Text(AText.completedTask,
                             style: Theme.of(context).textTheme.labelSmall),
-                        Text("643",
+                        Text("0",
                             style: Theme.of(context).textTheme.headlineMedium)
                       ],
                     ),
@@ -48,7 +48,7 @@ class UserCard extends StatelessWidget {
                       children: [
                         Text(AText.totalEranings,
                             style: Theme.of(context).textTheme.labelSmall),
-                        Text("N560,599",
+                        Text("N0",
                             style: Theme.of(context).textTheme.headlineMedium)
                       ],
                     )

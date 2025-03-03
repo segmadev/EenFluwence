@@ -141,7 +141,11 @@ class AHelperFunctions {
     return wrappedList;
   }
 
-  static String fomartDate(int timestamp) {
+  static String fomartDate(dynamic timestamp) {
+    if (timestamp.runtimeType == DateTime) {
+      return DateFormat('yyyy-MM-dd HH:mm').format(timestamp);
+    }
+    if (timestamp.runtimeType == String) timestamp = dateToTimeStamp(timestamp);
     DateTime now = DateTime.now();
     DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(
         timestamp.toString().length <= 12 ? timestamp * 1000 : timestamp);
@@ -157,7 +161,7 @@ class AHelperFunctions {
     // Parse the date and time string
     DateTime dateTime = DateTime.parse(date.split(" ")[0]);
     // Print the timestamp
-    return dateTime.millisecondsSinceEpoch;
+    return dateTime.millisecondsSinceEpoch.toInt();
   }
 
   static dynamic moneyFormart(dynamic amount,
@@ -183,5 +187,9 @@ class AHelperFunctions {
               fontSize: ASizes.fontSizeMd,
             ),
           );
+  }
+
+  static String shortText(word, {length = 10}) {
+    return "";
   }
 }

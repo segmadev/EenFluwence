@@ -1,4 +1,4 @@
-import 'package:enfluwence/pages/influencers/models/task.dart';
+import 'package:enfluwence/pages/general/models/task.dart';
 import 'package:flutter/material.dart';
 
 class QuestionList extends StatelessWidget {

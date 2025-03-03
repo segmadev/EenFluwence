@@ -61,25 +61,4 @@ class InfluencerApi {
       throw e;
     }
   }
-
-  Future<dynamic> get_task_list({int page = 1}) async {
-    final token = ALocalStorage().readData("token") ?? null;
-    if (token == null) return null;
-    final headers = {
-      'token': 'Bearer $token',
-    };
-    var pathUrl = ApiUrl.base_url +
-        ApiUrl.influencer_task_list +
-        "?page=$page&params=$noOfFecth";
-    final url = Uri.parse(pathUrl);
-    final response = await http.get(url, headers: headers);
-    // print(response.body);
-    try {
-      final data = ApiHelper.processResponse(response);
-      return data["data"];
-    } catch (e) {
-      // print(e);
-      throw e;
-    }
-  }
 }

@@ -1,3 +1,4 @@
+import 'package:enfluwence/data/repositories/authentication/authentication_repository.dart';
 import 'package:enfluwence/pages/general/controllers/general_user.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/size.dart';
@@ -104,7 +105,7 @@ class ProfileForm extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                isFirstUpdate
+                !isFirstUpdate
                     ? TextButton(
                         onPressed: () {},
                         child: Text(
@@ -113,7 +114,16 @@ class ProfileForm extends StatelessWidget {
                               color: AColor.danger,
                               fontSize: ASizes.fontSizeMd),
                         ))
-                    : const SizedBox(),
+                    : TextButton(
+                        onPressed: () {
+                          AuthenticationRepository().logout();
+                        },
+                        child: Text(
+                          "Logout",
+                          style: TextStyle(
+                              color: AColor.danger,
+                              fontSize: ASizes.fontSizeMd),
+                        )),
                 RoundButton(
                   name: "Save",
                   onPressed: () {

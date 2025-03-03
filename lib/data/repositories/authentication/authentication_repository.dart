@@ -28,8 +28,8 @@ class AuthenticationRepository extends GetxController {
             ? Get.offAll(const AuthScreen())
             : Get.offAll(const APagePreview());
       } else {
-        final user = User.user;
         print("Go to profile");
+        final user = User.user;
         if (!user.isVerified) {
           Get.offAll(const OTPScreen());
         } else if (user.name == null) {
@@ -39,7 +39,8 @@ class AuthenticationRepository extends GetxController {
         }
       }
     } catch (e) {
-      // logout();
+      print(e);
+      logout();
     }
   }
 
