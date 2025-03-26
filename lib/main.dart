@@ -6,6 +6,7 @@ import 'package:get_storage/get_storage.dart';
 
 Future<void> main() async {
   await GetStorage.init();
+
   Get.put(AuthenticationRepository());
   runApp(const MainApp());
 }

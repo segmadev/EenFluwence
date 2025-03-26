@@ -1,7 +1,4 @@
-import 'dart:ffi';
-
 import 'package:enfluwence/pages/influencers/controllers/influencer_task_controller.dart';
-import 'package:enfluwence/pages/general/models/task.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/other_task/fixed_bottom.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/other_task/multiple_choice/multiple_choice.dart';
 import 'package:enfluwence/pages/influencers/screens/tasks/other_task/questions/single_question.dart';
