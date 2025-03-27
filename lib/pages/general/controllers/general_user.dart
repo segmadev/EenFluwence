@@ -8,6 +8,7 @@ import 'package:enfluwence/utills/consts/text.dart';
 import 'package:enfluwence/utills/helpers/network_manager.dart';
 import 'package:enfluwence/utills/popups/full_screen_loader.dart';
 import 'package:enfluwence/utills/popups/snack_bar_pop.dart';
+import 'package:enfluwence/widgets/navigation/navigation_menu.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
@@ -103,6 +104,9 @@ class GeneralUserController extends GetxController {
       print(isFirstUpdate);
       if (isFirstUpdate) {
         AuthenticationRepository().screenRedirect();
+      } else {
+        // navigate to home
+        Get.offAll(const NavigationMenu());
       }
     } catch (e) {
       AFullScreenLoader.stopLoading();

@@ -1,3 +1,4 @@
+import 'package:enfluwence/pages/influencers/screens/wallet/fund_wallet_modal.dart';
 import 'package:enfluwence/utills/consts/colors.dart';
 import 'package:enfluwence/utills/consts/size.dart';
 import 'package:enfluwence/utills/consts/text.dart';
@@ -14,6 +15,17 @@ class FundAccountButton extends StatelessWidget {
     return RoundButton(
       color: backgroundColor ?? AColor.darkSuccess,
       width: double.infinity,
+      onPressed: () {
+        showDialog(
+          context: context,
+          builder: (context) => FundWalletModal(
+            onFund: (amount) {
+              // Handle the funding logic here
+              print('Funding wallet with: \$${amount}');
+            },
+          ),
+        );
+      },
       child: Text(
         AText.fundAccount,
         style: TextStyle(

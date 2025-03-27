@@ -35,7 +35,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/
-    - assets/data/
+    # - assets/data/
     - assets/images/
     - assets/images/logos/
     - assets/images/profile/
