@@ -30,6 +30,34 @@ class UserApi {
     }
   }
 
+  // add for fund wallet
+  Future<dynamic> fund_wallet(String amount) async {
+    // return error if not influencer
+    if (!isInfluncer) {
+      throw 'You are not an influencer';
+    }
+    final token = ALocalStorage().readData("token") ?? null;
+    if (token == null) return null;
+    final headers = {
+      'token': 'Bearer $token',
+    };
+
+    final body = json.encode({
+      "amount": amount,
+    });
+    final endpointUrl = ApiUrl.fund_wallet;
+    final pathUrl = ApiUrl.base_url + endpointUrl;
+    final url = Uri.parse(pathUrl);
+    final response = await http.post(url, headers: headers);
+
+    try {
+      final data = ApiHelper.processResponse(response);
+      return data;
+    } catch (e) {
+      throw e;
+    }
+  }
+
   Future<dynamic> get_user() async {
     final token = ALocalStorage().readData("token") ?? null;
     if (token == null) return null;

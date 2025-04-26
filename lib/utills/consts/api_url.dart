@@ -13,6 +13,7 @@ class ApiUrl {
   static String get_influencer = "/user/get-influencer";
   static String influencer_balance = "/user/get-influencer-balance";
   static String user_balance = "/user/get-user-balance";
+  static String fund_wallet = "/wallet/fund-wallet";
   static String sign_up_influencer_url = "/auth/register-influencer";
   static String sign_up_user_url = "/auth/register-user";
   static String tasks_and_money_spent =
@@ -26,4 +27,5 @@ class ApiUrl {
   static String get_task = "/task/get-task";
   static String create_task = "/task/create-task";
   static String get_avilable_task = "/task/get-available-tasks";
+  
 }
